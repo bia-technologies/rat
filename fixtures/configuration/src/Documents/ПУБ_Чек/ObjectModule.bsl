@@ -2,7 +2,7 @@
 //
 //  This file is a part of RAT.
 //
-//  Copyright © 2021-2025
+//  Copyright © 2021-2026
 //  BIA-Technologies Limited Liability Company and contributors
 //
 //  SPDX-License-Identifier: LGPL-3.0-or-later
@@ -37,6 +37,7 @@
 		Движение.Количество = ТекСтрокаТоварыУслуги.Количество;
 		Движение.Сумма = ТекСтрокаТоварыУслуги.Сумма;
 	КонецЦикла;
-
+	
+	Движения.ПУБ_ОстаткиТоваров.Записать(Истина);
 	//}}__КОНСТРУКТОР_ДВИЖЕНИЙ_РЕГИСТРОВ
 КонецПроцедуры

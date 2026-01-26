@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c9fbaf71-e57c-43fb-8c8f-785fbd2a29b1">
+  <name>РатПриЗаписиОбъекта</name>
+  <synonym>
+    <key>ru</key>
+    <value>При записи объекта</value>
+  </synonym>
+  <source>
+    <types>BusinessProcessObject</types>
+    <types>ChartOfCalculationTypesObject</types>
+    <types>ChartOfAccountsObject</types>
+    <types>ChartOfCharacteristicTypesObject</types>
+    <types>ExchangePlanObject</types>
+    <types>CatalogObject</types>
+    <types>TaskObject</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.РатСборДанныхПодпискиНаСобытия.ПриЗаписиОбъекта</handler>
+</mdclass:EventSubscription>

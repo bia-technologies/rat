@@ -8,6 +8,7 @@
   <objectBelonging>Adopted</objectBelonging>
   <extension xsi:type="mdclassExtension:ConfigurationExtension">
     <managedApplicationModule>Extended</managedApplicationModule>
+    <sessionModule>Extended</sessionModule>
   </extension>
   <containedObjects classId="9cd510cd-abfc-11d4-9434-004095e12fc7" objectId="0bc0f2b2-52d1-4916-b0b9-9bbd625edace"/>
   <containedObjects classId="9fcd25a0-4822-11d4-9414-008048da11f9" objectId="e14aed6c-09c7-48bc-8ee9-0d6a5b2e237e"/>
@@ -25,6 +26,7 @@
   <subsystems>Subsystem.Рат</subsystems>
   <subsystems>Subsystem.РатАдаптацияФункциональности</subsystems>
   <subsystems>Subsystem.РатРасширениеФункциональности</subsystems>
+  <sessionParameters>SessionParameter.РатАдресВременногоКонтекста</sessionParameters>
   <commonPictures>CommonPicture.РатПодсистема</commonPictures>
   <commonTemplates>CommonTemplate.РатИнтерфейс</commonTemplates>
   <commonTemplates>CommonTemplate.РатМетаданные</commonTemplates>
@@ -68,6 +70,8 @@
   <commonModules>CommonModule.РатРасширениеФункциональностиКлиентСервер</commonModules>
   <commonModules>CommonModule.РатРасширениеФункциональностиПовтИсп</commonModules>
   <commonModules>CommonModule.РатРегламентныеЗадания</commonModules>
+  <commonModules>CommonModule.РатСборДанных</commonModules>
+  <commonModules>CommonModule.РатСборДанныхПодпискиНаСобытия</commonModules>
   <commonModules>CommonModule.РатСервис</commonModules>
   <commonModules>CommonModule.РатСервисПереопределяемый</commonModules>
   <commonModules>CommonModule.РатСериализация</commonModules>
@@ -84,6 +88,12 @@
   <commonModules>CommonModule.РатЭмуляцияДействийПользователя</commonModules>
   <commonModules>CommonModule.РатЭмуляцияДействийПользователяВызовКлиента</commonModules>
   <httpServices>HTTPService.RAT</httpServices>
+  <eventSubscriptions>EventSubscription.РатПередЗаписьюРегистра</eventSubscriptions>
+  <eventSubscriptions>EventSubscription.РатПередЗаписьюРегистраРасчета</eventSubscriptions>
+  <eventSubscriptions>EventSubscription.РатПриЗаписиДокумента</eventSubscriptions>
+  <eventSubscriptions>EventSubscription.РатПриЗаписиОбъекта</eventSubscriptions>
+  <eventSubscriptions>EventSubscription.РатПриЗаписиРегистра</eventSubscriptions>
+  <eventSubscriptions>EventSubscription.РатПриЗаписиРегистраРасчета</eventSubscriptions>
   <commonCommands>CommonCommand.РатКомандныйИнтерфейсЗапросОтвет</commonCommands>
   <dataProcessors>DataProcessor.РатГенераторСценариев</dataProcessors>
   <dataProcessors>DataProcessor.РатШагиVA</dataProcessors>
