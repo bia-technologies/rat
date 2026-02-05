@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mdclass:ScheduledJob xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="08c2b2b3-0ad7-4d48-8e1a-89ebb2a22c4c">
-  <name>ПУБ_ПроизвольныйАлгоритм</name>
+  <name>Ф_ПроизвольныйАлгоритм</name>
   <synonym>
     <key>ru</key>
-    <value>ПУБ произвольный алгоритм</value>
+    <value>Ф произвольный алгоритм</value>
   </synonym>
-  <methodName>CommonModule.ПУБ_РегламентныеЗаданияСлужебный.ПроизвольныйАлгоритм</methodName>
+  <methodName>CommonModule.Ф_РегламентныеЗаданияСлужебный.ПроизвольныйАлгоритм</methodName>
   <description>ПроизвольныйАлгоритм</description>
   <key>ПроизвольныйАлгоритм</key>
   <predefined>true</predefined>

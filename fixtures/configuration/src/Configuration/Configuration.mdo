@@ -16,7 +16,7 @@
   <defaultRunMode>ManagedApplication</defaultRunMode>
   <usePurposes>PersonalComputer</usePurposes>
   <scriptVariant>Russian</scriptVariant>
-  <defaultRoles>Role.ПУБ_Администратор</defaultRoles>
+  <defaultRoles>Role.Ф_Администратор</defaultRoles>
   <usedMobileApplicationFunctionalities>
     <functionality>
       <use>true</use>
@@ -39,14 +39,15 @@
     </synonym>
     <languageCode>ru</languageCode>
   </languages>
-  <subsystems>Subsystem.ПУБ_ВсеОбъекты</subsystems>
-  <roles>Role.ПУБ_Администратор</roles>
-  <commonModules>CommonModule.ПУБ_ВыраженияСлужебный</commonModules>
-  <commonModules>CommonModule.ПУБ_РегламентныеЗаданияСлужебный</commonModules>
-  <exchangePlans>ExchangePlan.ПУБ_Все</exchangePlans>
-  <scheduledJobs>ScheduledJob.ПУБ_Пауза</scheduledJobs>
-  <scheduledJobs>ScheduledJob.ПУБ_ПроизвольныйАлгоритм</scheduledJobs>
-  <scheduledJobs>ScheduledJob.ПУБ_ФоноваяБлокировка</scheduledJobs>
+  <subsystems>Subsystem.Ф_ВсеОбъекты</subsystems>
+  <roles>Role.Ф_Администратор</roles>
+  <commonModules>CommonModule.Ф_ВыраженияСлужебный</commonModules>
+  <commonModules>CommonModule.Ф_РегламентныеЗаданияСлужебный</commonModules>
+  <exchangePlans>ExchangePlan.Ф_Все</exchangePlans>
+  <scheduledJobs>ScheduledJob.Ф_Пауза</scheduledJobs>
+  <scheduledJobs>ScheduledJob.Ф_ПроизвольныйАлгоритм</scheduledJobs>
+  <scheduledJobs>ScheduledJob.Ф_ФоноваяБлокировка</scheduledJobs>
+  <constants>Constant.Ф_Константа</constants>
   <catalogs>Catalog.Ф_Номенклатура</catalogs>
   <catalogs>Catalog.Ф_ОбъектыМетаданных</catalogs>
   <catalogs>Catalog.Ф_Склады</catalogs>
@@ -61,11 +62,13 @@
   <informationRegisters>InformationRegister.Ф_ПериодическаяКонстанта</informationRegisters>
   <informationRegisters>InformationRegister.Ф_ПримитивныеИзмерения</informationRegisters>
   <informationRegisters>InformationRegister.Ф_СтатусыОбъектов</informationRegisters>
+  <accumulationRegisters>AccumulationRegister.Ф_ОстаткиТоваров</accumulationRegisters>
   <informationRegisters>InformationRegister.Ф_ХранилищеЗначений</informationRegisters>
-  <accumulationRegisters>AccumulationRegister.ПУБ_ОстаткиТоваров</accumulationRegisters>
   <chartsOfCharacteristicTypes>ChartOfCharacteristicTypes.Ф_ПВХ</chartsOfCharacteristicTypes>
   <chartsOfAccounts>ChartOfAccounts.Ф_ПланСчетов</chartsOfAccounts>
+  <accountingRegisters>AccountingRegister.Ф_РегистрБухгалтерии</accountingRegisters>
   <chartsOfCalculationTypes>ChartOfCalculationTypes.Ф_ПланВидовРасчета</chartsOfCalculationTypes>
+  <calculationRegisters>CalculationRegister.Ф_РегистрРасчета</calculationRegisters>
   <businessProcesses>BusinessProcess.Ф_БизнесПроцесс</businessProcesses>
   <tasks>Task.Ф_Задача</tasks>
 </mdclass:Configuration>

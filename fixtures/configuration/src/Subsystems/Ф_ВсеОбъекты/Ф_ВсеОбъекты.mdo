@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6de9a554-5107-40bf-8b98-b9899ae2b8f3">
-  <name>ПУБ_ВсеОбъекты</name>
+  <name>Ф_ВсеОбъекты</name>
   <synonym>
     <key>ru</key>
-    <value>ПУБ все объекты</value>
+    <value>Ф все объекты</value>
   </synonym>
   <includeHelpInContents>true</includeHelpInContents>
   <includeInCommandInterface>true</includeInCommandInterface>
-  <content>AccumulationRegister.ПУБ_ОстаткиТоваров</content>
+  <content>AccumulationRegister.Ф_ОстаткиТоваров</content>
   <content>Catalog.Ф_Номенклатура</content>
   <content>Catalog.Ф_ОбъектыМетаданных</content>
   <content>Catalog.Ф_Склады</content>
   <content>ChartOfCharacteristicTypes.Ф_ПВХ</content>
-  <content>CommonModule.ПУБ_ВыраженияСлужебный</content>
-  <content>CommonModule.ПУБ_РегламентныеЗаданияСлужебный</content>
+  <content>CommonModule.Ф_ВыраженияСлужебный</content>
+  <content>CommonModule.Ф_РегламентныеЗаданияСлужебный</content>
   <content>DataProcessor.Ф_ТестированиеВзаимодействияМенеджераИКлиентаТестирования</content>
   <content>Document.Ф_Чек</content>
   <content>Enum.Ф_ВидыОпераций</content>
   <content>Enum.Ф_Статусы</content>
   <content>Enum.Ф_ТипыОбъектов</content>
-  <content>ExchangePlan.ПУБ_Все</content>
+  <content>ExchangePlan.Ф_Все</content>
   <content>InformationRegister.Ф_ИзмерениеСоставнойРеквизит</content>
   <content>InformationRegister.Ф_КомментарииПоОбъекту</content>
   <content>InformationRegister.Ф_ПериодическаяКонстанта</content>
   <content>InformationRegister.Ф_ПримитивныеИзмерения</content>
   <content>InformationRegister.Ф_СтатусыОбъектов</content>
-  <content>Role.ПУБ_Администратор</content>
-  <content>ScheduledJob.ПУБ_Пауза</content>
-  <content>ScheduledJob.ПУБ_ПроизвольныйАлгоритм</content>
-  <content>ScheduledJob.ПУБ_ФоноваяБлокировка</content>
+  <content>Role.Ф_Администратор</content>
+  <content>ScheduledJob.Ф_Пауза</content>
+  <content>ScheduledJob.Ф_ПроизвольныйАлгоритм</content>
+  <content>ScheduledJob.Ф_ФоноваяБлокировка</content>
 </mdclass:Subsystem>

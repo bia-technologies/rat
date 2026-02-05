@@ -18,12 +18,12 @@
   <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
   <createOnInput>DontUse</createOnInput>
   <dataLockControlMode>Managed</dataLockControlMode>
-  <fullTextSearch>DontUse</fullTextSearch>
   <editType>InDialog</editType>
   <numberType>String</numberType>
   <numberLength>9</numberLength>
   <numberAllowedLength>Variable</numberAllowedLength>
   <checkUnique>true</checkUnique>
   <autonumbering>true</autonumbering>
+  <task>Task.Ф_Задача</task>
   <createTaskInPrivilegedMode>true</createTaskInPrivilegedMode>
 </mdclass:BusinessProcess>

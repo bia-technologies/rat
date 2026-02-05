@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CalculationRegister xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="bda180bb-5b89-46d1-a8fe-1396ad97ed7c">
+  <producedTypes>
+    <selectionType typeId="ec35968d-7c9a-4a1a-87fa-a18f2d6d02ab" valueTypeId="4c1c6e95-18aa-4582-b7d9-e6a70ae15740"/>
+    <listType typeId="f8a6103a-76d3-4c77-b0a7-fee5406f6e29" valueTypeId="a1cf58e4-7b4e-467b-9e43-cb431fbe3b01"/>
+    <managerType typeId="95735a1a-9090-4804-b88b-7425900f862b" valueTypeId="3bc11be9-efbe-4c8a-8c8e-dd07b7f1ad7c"/>
+    <recordSetType typeId="73c55ca1-3424-4e9a-9934-bd00e6fb652d" valueTypeId="2684023b-88f9-4384-9d09-dbf948109542"/>
+    <recordKeyType typeId="6a894f9c-4b44-4854-9b4b-eceacab09369" valueTypeId="7147db60-0605-471e-a450-4211eccb8f39"/>
+    <recordType typeId="ebcb071e-09bf-49b2-ac77-d71e4af6e140" valueTypeId="6a27785e-edbf-4758-a1dc-2daf8a45f0c2"/>
+    <recalcsType typeId="f2f4d645-9512-44d1-a974-37d31083087a" valueTypeId="634a4219-f116-414f-b972-8b21a1dc2e04"/>
+  </producedTypes>
+  <name>Ф_РегистрРасчета</name>
+  <synonym>
+    <key>ru</key>
+    <value>Ф регистр расчета</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <periodicity>Month</periodicity>
+  <chartOfCalculationTypes>ChartOfCalculationTypes.Ф_ПланВидовРасчета</chartOfCalculationTypes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+</mdclass:CalculationRegister>

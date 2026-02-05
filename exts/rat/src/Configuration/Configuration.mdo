@@ -88,9 +88,13 @@
   <commonModules>CommonModule.РатЭмуляцияДействийПользователя</commonModules>
   <commonModules>CommonModule.РатЭмуляцияДействийПользователяВызовКлиента</commonModules>
   <httpServices>HTTPService.RAT</httpServices>
+  <eventSubscriptions>EventSubscription.РатПередЗаписьюДокумента</eventSubscriptions>
+  <eventSubscriptions>EventSubscription.РатПередЗаписьюКонстанты</eventSubscriptions>
+  <eventSubscriptions>EventSubscription.РатПередЗаписьюОбъекта</eventSubscriptions>
   <eventSubscriptions>EventSubscription.РатПередЗаписьюРегистра</eventSubscriptions>
   <eventSubscriptions>EventSubscription.РатПередЗаписьюРегистраРасчета</eventSubscriptions>
   <eventSubscriptions>EventSubscription.РатПриЗаписиДокумента</eventSubscriptions>
+  <eventSubscriptions>EventSubscription.РатПриЗаписиКонстанты</eventSubscriptions>
   <eventSubscriptions>EventSubscription.РатПриЗаписиОбъекта</eventSubscriptions>
   <eventSubscriptions>EventSubscription.РатПриЗаписиРегистра</eventSubscriptions>
   <eventSubscriptions>EventSubscription.РатПриЗаписиРегистраРасчета</eventSubscriptions>

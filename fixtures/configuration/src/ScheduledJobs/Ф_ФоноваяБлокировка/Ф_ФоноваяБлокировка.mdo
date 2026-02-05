@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mdclass:ScheduledJob xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="316cc467-50ad-4cdb-aba8-0df7ee87eea4">
-  <name>ПУБ_ФоноваяБлокировка</name>
+  <name>Ф_ФоноваяБлокировка</name>
   <synonym>
     <key>ru</key>
-    <value>ПУБ фоновая блокировка</value>
+    <value>Ф фоновая блокировка</value>
   </synonym>
-  <methodName>CommonModule.ПУБ_РегламентныеЗаданияСлужебный.ФоноваяБлокировка</methodName>
+  <methodName>CommonModule.Ф_РегламентныеЗаданияСлужебный.ФоноваяБлокировка</methodName>
   <description>ФоноваяБлокировка</description>
   <predefined>true</predefined>
   <restartCountOnFailure>3</restartCountOnFailure>

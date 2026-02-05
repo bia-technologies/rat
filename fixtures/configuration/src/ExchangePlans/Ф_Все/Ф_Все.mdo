@@ -7,14 +7,14 @@
     <listType typeId="7b1e7f89-7d6b-4d22-a7a4-9ced73aea859" valueTypeId="b97429e4-695d-4575-9b64-ce5b940947a3"/>
     <managerType typeId="7fc2f3fc-68eb-4fdf-b550-0e2cbca8dfc4" valueTypeId="10028117-2d49-43a4-9156-15140faada7f"/>
   </producedTypes>
-  <name>ПУБ_Все</name>
+  <name>Ф_Все</name>
   <synonym>
     <key>ru</key>
-    <value>ПУБ все</value>
+    <value>Ф все</value>
   </synonym>
   <useStandardCommands>true</useStandardCommands>
-  <inputByString>ExchangePlan.ПУБ_Все.StandardAttribute.Code</inputByString>
-  <inputByString>ExchangePlan.ПУБ_Все.StandardAttribute.Description</inputByString>
+  <inputByString>ExchangePlan.Ф_Все.StandardAttribute.Code</inputByString>
+  <inputByString>ExchangePlan.Ф_Все.StandardAttribute.Description</inputByString>
   <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
   <createOnInput>DontUse</createOnInput>
   <dataLockControlMode>Managed</dataLockControlMode>
@@ -22,7 +22,7 @@
   <codeAllowedLength>Variable</codeAllowedLength>
   <descriptionLength>25</descriptionLength>
   <content>
-    <mdObject>AccumulationRegister.ПУБ_ОстаткиТоваров</mdObject>
+    <mdObject>AccumulationRegister.Ф_ОстаткиТоваров</mdObject>
   </content>
   <content>
     <mdObject>Catalog.Ф_Номенклатура</mdObject>

@@ -8,10 +8,10 @@
     <recordKeyType typeId="48deb7d1-7c55-4e14-be03-52935a9d8e28" valueTypeId="8092e57e-39aa-4d49-bad0-50ebb873932c"/>
     <recordType typeId="b1ede403-66db-4ecb-8881-e06b97881ebb" valueTypeId="839e8b5a-4979-4cc4-821e-06067653e7bd"/>
   </producedTypes>
-  <name>ПУБ_ОстаткиТоваров</name>
+  <name>Ф_ОстаткиТоваров</name>
   <synonym>
     <key>ru</key>
-    <value>ПУБ остатки товаров</value>
+    <value>Ф остатки товаров</value>
   </synonym>
   <useStandardCommands>true</useStandardCommands>
   <dataLockControlMode>Managed</dataLockControlMode>

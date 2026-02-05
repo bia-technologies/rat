@@ -22,7 +22,7 @@
   <numberAllowedLength>Variable</numberAllowedLength>
   <checkUnique>true</checkUnique>
   <autonumbering>true</autonumbering>
-  <registerRecords>AccumulationRegister.ПУБ_ОстаткиТоваров</registerRecords>
+  <registerRecords>AccumulationRegister.Ф_ОстаткиТоваров</registerRecords>
   <postInPrivilegedMode>true</postInPrivilegedMode>
   <unpostInPrivilegedMode>true</unpostInPrivilegedMode>
   <attributes uuid="f03a2868-ba80-4700-afe7-d11e1b8c819e">

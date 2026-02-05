@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mdclass:ScheduledJob xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="81c2cc80-eb56-485c-8e60-97f16173484b">
-  <name>ПУБ_Пауза</name>
+  <name>Ф_Пауза</name>
   <synonym>
     <key>ru</key>
-    <value>ПУБ пауза</value>
+    <value>Ф пауза</value>
   </synonym>
-  <methodName>CommonModule.ПУБ_РегламентныеЗаданияСлужебный.Пауза</methodName>
+  <methodName>CommonModule.Ф_РегламентныеЗаданияСлужебный.Пауза</methodName>
   <description>Пауза</description>
   <key>Пауза</key>
   <predefined>true</predefined>

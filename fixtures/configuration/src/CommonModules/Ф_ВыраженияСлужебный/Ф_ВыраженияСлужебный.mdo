@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mdclass:CommonModule xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6c7166c1-9517-4bf7-b56e-29ed38dbc37b">
-  <name>ПУБ_ВыраженияСлужебный</name>
+  <name>Ф_ВыраженияСлужебный</name>
   <synonym>
     <key>ru</key>
-    <value>ПУБ выражения служебный</value>
+    <value>Ф выражения служебный</value>
   </synonym>
   <server>true</server>
 </mdclass:CommonModule>
