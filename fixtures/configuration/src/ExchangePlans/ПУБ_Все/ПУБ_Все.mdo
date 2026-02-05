@@ -18,7 +18,6 @@
   <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
   <createOnInput>DontUse</createOnInput>
   <dataLockControlMode>Managed</dataLockControlMode>
-  <fullTextSearch>DontUse</fullTextSearch>
   <codeLength>9</codeLength>
   <codeAllowedLength>Variable</codeAllowedLength>
   <descriptionLength>25</descriptionLength>
@@ -26,34 +25,34 @@
     <mdObject>AccumulationRegister.ПУБ_ОстаткиТоваров</mdObject>
   </content>
   <content>
-    <mdObject>Catalog.ПУБ_Номенклатура</mdObject>
+    <mdObject>Catalog.Ф_Номенклатура</mdObject>
   </content>
   <content>
-    <mdObject>Catalog.ПУБ_ОбъектыМетаданных</mdObject>
+    <mdObject>Catalog.Ф_ОбъектыМетаданных</mdObject>
   </content>
   <content>
-    <mdObject>Catalog.ПУБ_Склады</mdObject>
+    <mdObject>Catalog.Ф_Склады</mdObject>
   </content>
   <content>
-    <mdObject>ChartOfCharacteristicTypes.ПУБ_ПВХ</mdObject>
+    <mdObject>ChartOfCharacteristicTypes.Ф_ПВХ</mdObject>
   </content>
   <content>
-    <mdObject>Document.ПУБ_Чек</mdObject>
+    <mdObject>Document.Ф_Чек</mdObject>
   </content>
   <content>
-    <mdObject>InformationRegister.ПУБ_ИзмерениеСоставнойРеквизит</mdObject>
+    <mdObject>InformationRegister.Ф_ИзмерениеСоставнойРеквизит</mdObject>
   </content>
   <content>
-    <mdObject>InformationRegister.ПУБ_КомментарииПоОбъекту</mdObject>
+    <mdObject>InformationRegister.Ф_КомментарииПоОбъекту</mdObject>
   </content>
   <content>
-    <mdObject>InformationRegister.ПУБ_ПериодическаяКонстанта</mdObject>
+    <mdObject>InformationRegister.Ф_ПериодическаяКонстанта</mdObject>
   </content>
   <content>
-    <mdObject>InformationRegister.ПУБ_ПримитивныеИзмерения</mdObject>
+    <mdObject>InformationRegister.Ф_ПримитивныеИзмерения</mdObject>
   </content>
   <content>
-    <mdObject>InformationRegister.ПУБ_СтатусыОбъектов</mdObject>
+    <mdObject>InformationRegister.Ф_СтатусыОбъектов</mdObject>
   </content>
   <defaultPresentation>AsDescription</defaultPresentation>
   <editType>InDialog</editType>

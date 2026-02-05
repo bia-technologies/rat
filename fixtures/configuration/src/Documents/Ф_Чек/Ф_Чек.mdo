@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="bce85109-91d9-4bc3-bb94-7d5ed82811e7">
+  <producedTypes>
+    <objectType typeId="27fbf11e-b3b9-42d5-a92c-cf40378f9629" valueTypeId="5e57d4f2-8869-47cc-970c-57bfe66a25bd"/>
+    <refType typeId="bb622b82-c868-41d2-8b30-40ac975ba7b3" valueTypeId="26bbb4c3-7e0f-483d-9b27-83c465638bb3"/>
+    <selectionType typeId="00baee72-55ab-40bb-8651-02875d8770b9" valueTypeId="18968ebf-17fe-4630-82cd-4c25c582fd31"/>
+    <listType typeId="817875cb-3d71-46f1-af5e-5e3f6e2599af" valueTypeId="f15e2334-4d62-4ff3-9b47-7ef1f7019584"/>
+    <managerType typeId="28ce8a4a-7925-4939-8cf1-02b44d32b7e8" valueTypeId="e9ade477-91fc-44fd-a192-71539ae2af41"/>
+  </producedTypes>
+  <name>Ф_Чек</name>
+  <synonym>
+    <key>ru</key>
+    <value>Ф чек</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.Ф_Чек.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <registerRecords>AccumulationRegister.ПУБ_ОстаткиТоваров</registerRecords>
+  <postInPrivilegedMode>true</postInPrivilegedMode>
+  <unpostInPrivilegedMode>true</unpostInPrivilegedMode>
+  <attributes uuid="f03a2868-ba80-4700-afe7-d11e1b8c819e">
+    <name>НомерСмены</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер смены</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="4212d8fa-a087-4214-ad77-197f7bbc33d6">
+    <name>ВидОперации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид операции</value>
+    </synonym>
+    <type>
+      <types>EnumRef.Ф_ВидыОпераций</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="aa39ba26-f381-4768-b45e-d5630a47c44a">
+    <name>КассоваяСмена</name>
+    <synonym>
+      <key>ru</key>
+      <value>Кассовая смена</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="2f111be0-b880-4462-8759-963e44beaee5">
+    <producedTypes>
+      <objectType typeId="49d15a2f-ec60-4510-94e7-44b9f5af4dba" valueTypeId="1c1bc36a-fc24-4388-952f-573fe797da9b"/>
+      <rowType typeId="7b23ba1d-4a89-4396-94be-1622a02c57a1" valueTypeId="fdfd0d70-ee78-4c00-8344-413d65110485"/>
+    </producedTypes>
+    <name>ТоварыУслуги</name>
+    <synonym>
+      <key>ru</key>
+      <value>Товары услуги</value>
+    </synonym>
+    <attributes uuid="aa233b66-7d60-45c6-a3fd-0559dcb3708a">
+      <name>Номенклатура</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номенклатура</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Ф_Номенклатура</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="bac237f3-e16b-42c9-8a9c-73ec3447a328">
+      <name>Количество</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <scale>3</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="b30b0b4a-97f1-4558-9f7a-9c09020a6ac7">
+      <name>Цена</name>
+      <synonym>
+        <key>ru</key>
+        <value>Цена</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="36c1bfa4-b4c3-40e2-ba8f-f0889b3188eb">
+      <name>Сумма</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

@@ -47,20 +47,25 @@
   <scheduledJobs>ScheduledJob.ПУБ_Пауза</scheduledJobs>
   <scheduledJobs>ScheduledJob.ПУБ_ПроизвольныйАлгоритм</scheduledJobs>
   <scheduledJobs>ScheduledJob.ПУБ_ФоноваяБлокировка</scheduledJobs>
-  <catalogs>Catalog.ПУБ_Номенклатура</catalogs>
-  <catalogs>Catalog.ПУБ_ОбъектыМетаданных</catalogs>
-  <catalogs>Catalog.ПУБ_Склады</catalogs>
-  <documents>Document.ПУБ_Чек</documents>
-  <enums>Enum.ПУБ_ВидыОпераций</enums>
-  <enums>Enum.ПУБ_Статусы</enums>
-  <enums>Enum.ПУБ_ТипыОбъектов</enums>
-  <dataProcessors>DataProcessor.ПУБ_ТестированиеВзаимодействияМенеджераИКлиентаТестирования</dataProcessors>
-  <informationRegisters>InformationRegister.ПУБ_ИзмерениеСоставнойРеквизит</informationRegisters>
-  <informationRegisters>InformationRegister.ПУБ_КомментарииПоОбъекту</informationRegisters>
-  <informationRegisters>InformationRegister.ПУБ_ПериодическаяКонстанта</informationRegisters>
-  <informationRegisters>InformationRegister.ПУБ_ПримитивныеИзмерения</informationRegisters>
-  <informationRegisters>InformationRegister.ПУБ_СтатусыОбъектов</informationRegisters>
+  <catalogs>Catalog.Ф_Номенклатура</catalogs>
+  <catalogs>Catalog.Ф_ОбъектыМетаданных</catalogs>
+  <catalogs>Catalog.Ф_Склады</catalogs>
+  <documents>Document.Ф_ТестированиеМонитораИзменений</documents>
+  <documents>Document.Ф_Чек</documents>
+  <enums>Enum.Ф_ВидыОпераций</enums>
+  <enums>Enum.Ф_Статусы</enums>
+  <enums>Enum.Ф_ТипыОбъектов</enums>
+  <dataProcessors>DataProcessor.Ф_ТестированиеВзаимодействияМенеджераИКлиентаТестирования</dataProcessors>
+  <informationRegisters>InformationRegister.Ф_ИзмерениеСоставнойРеквизит</informationRegisters>
+  <informationRegisters>InformationRegister.Ф_КомментарииПоОбъекту</informationRegisters>
+  <informationRegisters>InformationRegister.Ф_ПериодическаяКонстанта</informationRegisters>
+  <informationRegisters>InformationRegister.Ф_ПримитивныеИзмерения</informationRegisters>
+  <informationRegisters>InformationRegister.Ф_СтатусыОбъектов</informationRegisters>
   <informationRegisters>InformationRegister.Ф_ХранилищеЗначений</informationRegisters>
   <accumulationRegisters>AccumulationRegister.ПУБ_ОстаткиТоваров</accumulationRegisters>
-  <chartsOfCharacteristicTypes>ChartOfCharacteristicTypes.ПУБ_ПВХ</chartsOfCharacteristicTypes>
+  <chartsOfCharacteristicTypes>ChartOfCharacteristicTypes.Ф_ПВХ</chartsOfCharacteristicTypes>
+  <chartsOfAccounts>ChartOfAccounts.Ф_ПланСчетов</chartsOfAccounts>
+  <chartsOfCalculationTypes>ChartOfCalculationTypes.Ф_ПланВидовРасчета</chartsOfCalculationTypes>
+  <businessProcesses>BusinessProcess.Ф_БизнесПроцесс</businessProcesses>
+  <tasks>Task.Ф_Задача</tasks>
 </mdclass:Configuration>

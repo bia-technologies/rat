@@ -55,7 +55,7 @@
       <value>Склад</value>
     </synonym>
     <type>
-      <types>CatalogRef.ПУБ_Склады</types>
+      <types>CatalogRef.Ф_Склады</types>
     </type>
     <minValue xsi:type="core:UndefinedValue"/>
     <maxValue xsi:type="core:UndefinedValue"/>
@@ -68,7 +68,7 @@
       <value>Номенклатура</value>
     </synonym>
     <type>
-      <types>CatalogRef.ПУБ_Номенклатура</types>
+      <types>CatalogRef.Ф_Номенклатура</types>
     </type>
     <minValue xsi:type="core:UndefinedValue"/>
     <maxValue xsi:type="core:UndefinedValue"/>

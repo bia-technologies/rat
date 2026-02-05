@@ -2,7 +2,7 @@
 //
 //  This file is a part of RAT.
 //
-//  Copyright © 2021-2025
+//  Copyright © 2021-2026
 //  BIA-Technologies Limited Liability Company and contributors
 //
 //  SPDX-License-Identifier: LGPL-3.0-or-later
@@ -204,7 +204,7 @@
 		
 	КонецЕсли;
 	
-	Если ОписаниеТипа.ВидыСубконто Тогда
+	Если ОписаниеТипа.ВидыСубконто И МетаданныеОбъекта.ВидыСубконто <> Неопределено Тогда
 		
 		РеквизитыТабличнойЧасти = Новый Структура();
 		

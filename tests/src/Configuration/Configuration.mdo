@@ -8,6 +8,7 @@
   <objectBelonging>Adopted</objectBelonging>
   <extension xsi:type="mdclassExtension:ConfigurationExtension">
     <managedApplicationModule>Extended</managedApplicationModule>
+    <ordinaryApplicationModule>Extended</ordinaryApplicationModule>
   </extension>
   <containedObjects classId="9cd510cd-abfc-11d4-9434-004095e12fc7" objectId="58237212-8614-4239-919f-4f143ec708ed"/>
   <containedObjects classId="9fcd25a0-4822-11d4-9414-008048da11f9" objectId="080238dc-4308-4870-933b-0bc6a47d654e"/>
@@ -88,6 +89,7 @@
   <commonModules>CommonModule.ОМ_РатПреобразованияСистемныеПеречисления</commonModules>
   <commonModules>CommonModule.ОМ_РатПреобразованияСсылки</commonModules>
   <commonModules>CommonModule.ОМ_РатРегламентныеЗадания</commonModules>
+  <commonModules>CommonModule.ОМ_РатСборДанных</commonModules>
   <commonModules>CommonModule.ОМ_РатСервис</commonModules>
   <commonModules>CommonModule.ОМ_РатСериализация</commonModules>
   <commonModules>CommonModule.ОМ_РатСпецификация</commonModules>

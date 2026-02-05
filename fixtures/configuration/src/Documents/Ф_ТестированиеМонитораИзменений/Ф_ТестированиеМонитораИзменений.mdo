@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c03a1eba-922a-4fea-b5e5-acde3beacc83">
+  <producedTypes>
+    <objectType typeId="f755528e-9448-40a8-b676-c5c62f468018" valueTypeId="40da313a-a419-49c9-b4e4-9b55907b2cfb"/>
+    <refType typeId="90dac0d1-452f-4a81-8824-3bdc2e1f4a2a" valueTypeId="ba2c45fd-b5d4-4026-98cc-697fdb8e74c9"/>
+    <selectionType typeId="aa9b744f-629d-42bb-8021-5301dc1fa75a" valueTypeId="163302d1-3566-4e5c-a4a5-bb49e09ad389"/>
+    <listType typeId="5b3d696d-f136-4e2c-9468-a410f2c4ff60" valueTypeId="41877afd-d2e4-45e9-add0-fe9acbd90ceb"/>
+    <managerType typeId="4e6e69d6-ff7c-4be3-9d12-20c4859613ff" valueTypeId="df302806-5424-4d4a-b4b0-eb95e227b798"/>
+  </producedTypes>
+  <name>Ф_ТестированиеМонитораИзменений</name>
+  <synonym>
+    <key>ru</key>
+    <value>Ф тестирование монитора изменений</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.Ф_ТестированиеМонитораИзменений.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>DontUse</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <postInPrivilegedMode>true</postInPrivilegedMode>
+  <unpostInPrivilegedMode>true</unpostInPrivilegedMode>
+  <tabularSections uuid="4d8eb239-be9e-4d84-b8a7-62ca1bfd9fb2">
+    <producedTypes>
+      <objectType typeId="eeccad57-2a4d-4834-bd93-f4e774ddd783" valueTypeId="22adc164-7590-42fc-a6e0-9585724effe7"/>
+      <rowType typeId="5edba72d-9079-49c8-9267-2555308bb0b9" valueTypeId="3303b752-431e-48f6-b78c-88b6c5f2e3e9"/>
+    </producedTypes>
+    <name>Объекты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объекты</value>
+    </synonym>
+    <attributes uuid="b30f2135-2e4a-4ab1-a6ce-ccb8484a18c7">
+      <name>ИзменяемыйОбъект</name>
+      <synonym>
+        <key>ru</key>
+        <value>Изменяемый объект</value>
+      </synonym>
+      <type>
+        <types>AnyRef</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>DontUse</fullTextSearch>
+    </attributes>
+    <attributes uuid="7fbc7585-2357-4e7b-a2a1-853b054e627b">
+      <name>ИмяРеквизита</name>
+      <synonym>
+        <key>ru</key>
+        <value>Имя реквизита</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>DontUse</fullTextSearch>
+    </attributes>
+    <attributes uuid="48c29930-87c1-4df0-bfba-e18dd90d1ab9">
+      <name>НовоеЗначение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Новое значение</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+        <types>String</types>
+        <types>Date</types>
+        <types>Number</types>
+        <types>AnyRef</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>DontUse</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

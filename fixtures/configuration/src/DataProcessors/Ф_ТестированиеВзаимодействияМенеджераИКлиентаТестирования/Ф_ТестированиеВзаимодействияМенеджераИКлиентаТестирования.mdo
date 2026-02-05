@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="de97bc64-daed-4850-a694-f7481b37f32d">
+  <producedTypes>
+    <objectType typeId="5acddd02-d9ea-45f7-bb2e-e5d8070cc3e6" valueTypeId="4ddc7de8-9c8d-4f45-adeb-7a62da317840"/>
+    <managerType typeId="2bff8ee0-f3bf-4c59-a83b-37e0603e1faf" valueTypeId="b07bc9f7-1564-4851-a60a-0dd2bec0912f"/>
+  </producedTypes>
+  <name>Ф_ТестированиеВзаимодействияМенеджераИКлиентаТестирования</name>
+  <synonym>
+    <key>ru</key>
+    <value>Ф тестирование взаимодействия менеджера и клиента тестирования</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.Ф_ТестированиеВзаимодействияМенеджераИКлиентаТестирования.Form.Основная</defaultForm>
+  <forms uuid="8907c949-a8a9-451a-9982-11761dde8d10">
+    <name>Основная</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основная</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="e3767aed-5134-4286-81c0-7cf95309dd5a">
+    <name>ТестовыйМакет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тестовый макет</value>
+    </synonym>
+  </templates>
+</mdclass:DataProcessor>

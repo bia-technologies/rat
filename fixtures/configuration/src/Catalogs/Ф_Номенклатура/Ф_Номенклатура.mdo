@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b90745a2-ef5f-485c-a91d-5b3c967d268a">
+  <producedTypes>
+    <objectType typeId="6d0181aa-ad58-41ee-9055-518eeb091497" valueTypeId="cfa059df-3686-4253-add6-1e28cc863e65"/>
+    <refType typeId="62e5a462-ac51-4cf9-82ee-34f24bbeebdc" valueTypeId="c1b6d9ad-981e-4c98-a09e-aaf9e03c98e8"/>
+    <selectionType typeId="cea02f7c-d1c5-4cd8-8a8d-e11d078bfe41" valueTypeId="6a2af328-16b1-4631-8240-de1788800abf"/>
+    <listType typeId="53ef6bd9-b135-4757-a7a2-901752ae3363" valueTypeId="1d445cc4-1b30-4127-b88e-e3ac658a2b4a"/>
+    <managerType typeId="15ef7f6d-1b68-41cc-b266-a1da44a8b60b" valueTypeId="0f4b1ce0-340a-4fea-a40b-1c84ad80e8d5"/>
+  </producedTypes>
+  <name>Ф_Номенклатура</name>
+  <synonym>
+    <key>ru</key>
+    <value>Ф номенклатура</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.Ф_Номенклатура.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.Ф_Номенклатура.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>64</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <defaultObjectForm>Catalog.ПУБ_Номенклатура.Form.ФормаЭлемента</defaultObjectForm>
+  <attributes uuid="694b2f41-779b-4559-8140-63fb4bc4923d">
+    <name>Картинка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Картинка</value>
+    </synonym>
+    <type>
+      <types>ValueStorage</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="f8d63490-0902-4503-bbb3-b8ae0bc50cd2">
+    <name>ФормаЭлемента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма элемента</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Catalog>

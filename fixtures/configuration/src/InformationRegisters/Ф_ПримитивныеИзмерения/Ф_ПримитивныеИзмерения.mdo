@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7d4d4e23-c527-47e0-b06b-72fe959b9e5d">
+  <producedTypes>
+    <selectionType typeId="c7669630-1acc-4bb1-8d80-5694d5ebae11" valueTypeId="8592dd02-c221-439a-b38e-1701af642852"/>
+    <listType typeId="c59b48c1-cc6a-4aae-bdc3-e54bb76b4b42" valueTypeId="f1d986ec-b0a0-4a86-bd9a-5ba2955603f5"/>
+    <managerType typeId="890fbc0b-aabe-48fb-a991-2a558d8f23c1" valueTypeId="69d857cb-6924-4021-a716-65a7f5501f97"/>
+    <recordSetType typeId="d704ce69-e5e5-4a81-bd86-22cf042cab0a" valueTypeId="8554921e-3417-49eb-9a2a-2a20bc342a05"/>
+    <recordKeyType typeId="dc05c358-8539-4904-92ab-f0fdb0ffa1f5" valueTypeId="d57fd193-1e94-4f14-82ad-94de3a3b83bf"/>
+    <recordType typeId="dd8902eb-ac3b-4b74-83c7-3ee175ff1239" valueTypeId="82a39a6c-4e99-483c-b449-a839d9b2c8f7"/>
+    <recordManagerType typeId="36511fc9-2c6b-4006-9b28-80a6efdc4595" valueTypeId="2b552ee6-a273-4fdc-86ee-757c61b8b7b9"/>
+  </producedTypes>
+  <name>Ф_ПримитивныеИзмерения</name>
+  <synonym>
+    <key>ru</key>
+    <value>Ф примитивные измерения</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="6b409610-6bf5-430c-bcd3-90ffb5d7101c">
+    <name>Булево</name>
+    <synonym>
+      <key>ru</key>
+      <value>Булево</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="bc267301-43fa-45d0-8ea9-ac710bdfdcc2">
+    <name>УникальныйИдентификатор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Уникальный идентификатор</value>
+    </synonym>
+    <type>
+      <types>UUID</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="12d6fb35-e4e7-4a36-b343-2221b38bb023">
+    <name>Число</name>
+    <synonym>
+      <key>ru</key>
+      <value>Число</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="88c0f416-8fce-4d7d-8daf-cf61575da809">
+    <name>Строка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Строка</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="05e37737-6169-4695-b6a9-25818a6ab1fc">
+    <name>Дата</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

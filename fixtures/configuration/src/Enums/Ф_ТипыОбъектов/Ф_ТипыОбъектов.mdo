@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Enum xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a2c4da9a-e77e-41d7-ba7e-a7e859a6f0f9">
+  <producedTypes>
+    <refType typeId="a8ef4d47-7773-401b-bd5f-f513d2539b13" valueTypeId="5d1bbeb4-3584-4aee-98bb-2c9c9a6fc7c0"/>
+    <listType typeId="c31a86dc-9bc1-41ad-b4c8-62d7c5e25aa5" valueTypeId="a8339d8b-3fe2-42d0-a053-fd324d958a5e"/>
+    <managerType typeId="2d3f35c7-be6d-48b0-affc-7a024be4e45f" valueTypeId="b20ba89c-0e64-428b-a7fc-da2b577447fa"/>
+  </producedTypes>
+  <name>Ф_ТипыОбъектов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Ф типы объектов</value>
+  </synonym>
+  <quickChoice>true</quickChoice>
+  <choiceMode>BothWays</choiceMode>
+  <enumValues uuid="c67061fe-c1e0-479e-b654-d5801d3157cb">
+    <name>Справочник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Справочник</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="9bdfddd0-54ff-4058-a5af-5d53513a7fdc">
+    <name>Документ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="43fc1203-0404-4b0e-8c8d-85f9657a48f4">
+    <name>Перечисление</name>
+    <synonym>
+      <key>ru</key>
+      <value>Перечисление</value>
+    </synonym>
+  </enumValues>
+</mdclass:Enum>
