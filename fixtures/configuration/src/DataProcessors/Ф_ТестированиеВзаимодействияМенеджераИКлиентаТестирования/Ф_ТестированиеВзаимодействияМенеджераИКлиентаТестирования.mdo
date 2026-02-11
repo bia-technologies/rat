@@ -7,7 +7,7 @@
   <name>Ф_ТестированиеВзаимодействияМенеджераИКлиентаТестирования</name>
   <synonym>
     <key>ru</key>
-    <value>Ф тестирование взаимодействия менеджера и клиента тестирования</value>
+    <value>Тестирование взаимодействия менеджера и клиента тестирования</value>
   </synonym>
   <useStandardCommands>true</useStandardCommands>
   <defaultForm>DataProcessor.Ф_ТестированиеВзаимодействияМенеджераИКлиентаТестирования.Form.Основная</defaultForm>

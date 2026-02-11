@@ -10,7 +10,7 @@
   <name>Ф_Номенклатура</name>
   <synonym>
     <key>ru</key>
-    <value>Ф номенклатура</value>
+    <value>Номенклатура</value>
   </synonym>
   <useStandardCommands>true</useStandardCommands>
   <inputByString>Catalog.Ф_Номенклатура.StandardAttribute.Code</inputByString>

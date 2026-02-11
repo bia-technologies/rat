@@ -8,7 +8,7 @@
   <name>Ф_ВидыОпераций</name>
   <synonym>
     <key>ru</key>
-    <value>Ф виды операций</value>
+    <value>Виды операций</value>
   </synonym>
   <quickChoice>true</quickChoice>
   <choiceMode>BothWays</choiceMode>

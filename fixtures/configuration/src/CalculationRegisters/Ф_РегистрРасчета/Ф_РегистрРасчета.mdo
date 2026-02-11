@@ -12,7 +12,7 @@
   <name>Ф_РегистрРасчета</name>
   <synonym>
     <key>ru</key>
-    <value>Ф регистр расчета</value>
+    <value>Регистр расчета</value>
   </synonym>
   <useStandardCommands>true</useStandardCommands>
   <periodicity>Month</periodicity>

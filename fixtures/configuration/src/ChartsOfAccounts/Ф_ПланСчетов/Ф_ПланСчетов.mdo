@@ -12,7 +12,7 @@
   <name>Ф_ПланСчетов</name>
   <synonym>
     <key>ru</key>
-    <value>Ф план счетов</value>
+    <value>План счетов</value>
   </synonym>
   <useStandardCommands>true</useStandardCommands>
   <inputByString>ChartOfAccounts.Ф_ПланСчетов.StandardAttribute.Code</inputByString>
@@ -20,7 +20,6 @@
   <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
   <createOnInput>DontUse</createOnInput>
   <dataLockControlMode>Managed</dataLockControlMode>
-  <fullTextSearch>DontUse</fullTextSearch>
   <codeLength>9</codeLength>
   <descriptionLength>25</descriptionLength>
   <checkUnique>true</checkUnique>

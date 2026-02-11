@@ -12,7 +12,7 @@
   <name>Ф_КомментарииПоОбъекту</name>
   <synonym>
     <key>ru</key>
-    <value>Ф комментарии по объекту</value>
+    <value>Комментарии по объекту</value>
   </synonym>
   <useStandardCommands>true</useStandardCommands>
   <editType>InDialog</editType>

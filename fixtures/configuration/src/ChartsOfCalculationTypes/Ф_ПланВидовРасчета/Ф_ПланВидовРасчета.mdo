@@ -16,7 +16,7 @@
   <name>Ф_ПланВидовРасчета</name>
   <synonym>
     <key>ru</key>
-    <value>Ф план видов расчета</value>
+    <value>План видов расчета</value>
   </synonym>
   <useStandardCommands>true</useStandardCommands>
   <inputByString>ChartOfCalculationTypes.Ф_ПланВидовРасчета.StandardAttribute.Code</inputByString>
@@ -24,7 +24,6 @@
   <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
   <createOnInput>DontUse</createOnInput>
   <dataLockControlMode>Managed</dataLockControlMode>
-  <fullTextSearch>DontUse</fullTextSearch>
   <codeLength>9</codeLength>
   <descriptionLength>40</descriptionLength>
   <codeType>String</codeType>

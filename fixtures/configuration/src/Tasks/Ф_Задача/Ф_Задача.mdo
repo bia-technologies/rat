@@ -10,7 +10,7 @@
   <name>Ф_Задача</name>
   <synonym>
     <key>ru</key>
-    <value>Ф задача</value>
+    <value>Задача</value>
   </synonym>
   <useStandardCommands>true</useStandardCommands>
   <inputByString>Task.Ф_Задача.StandardAttribute.Number</inputByString>
@@ -18,7 +18,6 @@
   <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
   <createOnInput>DontUse</createOnInput>
   <dataLockControlMode>Managed</dataLockControlMode>
-  <fullTextSearch>DontUse</fullTextSearch>
   <numberType>String</numberType>
   <numberLength>9</numberLength>
   <numberAllowedLength>Variable</numberAllowedLength>

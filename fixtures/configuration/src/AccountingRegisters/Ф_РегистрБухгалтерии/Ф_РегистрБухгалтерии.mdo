@@ -12,7 +12,7 @@
   <name>Ф_РегистрБухгалтерии</name>
   <synonym>
     <key>ru</key>
-    <value>Ф регистр бухгалтерии</value>
+    <value>Регистр бухгалтерии</value>
   </synonym>
   <useStandardCommands>true</useStandardCommands>
   <dataLockControlMode>Managed</dataLockControlMode>
@@ -32,7 +32,6 @@
     </type>
     <minValue xsi:type="core:UndefinedValue"/>
     <maxValue xsi:type="core:UndefinedValue"/>
-    <fullTextSearch>DontUse</fullTextSearch>
     <balance>true</balance>
   </resources>
 </mdclass:AccountingRegister>

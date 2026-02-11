@@ -11,7 +11,7 @@
   <name>Ф_ОстаткиТоваров</name>
   <synonym>
     <key>ru</key>
-    <value>Ф остатки товаров</value>
+    <value>Остатки товаров</value>
   </synonym>
   <useStandardCommands>true</useStandardCommands>
   <dataLockControlMode>Managed</dataLockControlMode>

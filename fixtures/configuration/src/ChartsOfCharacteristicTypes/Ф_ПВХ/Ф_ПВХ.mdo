@@ -11,7 +11,7 @@
   <name>Ф_ПВХ</name>
   <synonym>
     <key>ru</key>
-    <value>Ф ПВХ</value>
+    <value>ПВХ</value>
   </synonym>
   <useStandardCommands>true</useStandardCommands>
   <inputByString>ChartOfCharacteristicTypes.Ф_ПВХ.StandardAttribute.Code</inputByString>

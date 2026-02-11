@@ -12,7 +12,7 @@
   <name>Ф_ПримитивныеИзмерения</name>
   <synonym>
     <key>ru</key>
-    <value>Ф примитивные измерения</value>
+    <value>Примитивные измерения</value>
   </synonym>
   <useStandardCommands>true</useStandardCommands>
   <editType>InDialog</editType>

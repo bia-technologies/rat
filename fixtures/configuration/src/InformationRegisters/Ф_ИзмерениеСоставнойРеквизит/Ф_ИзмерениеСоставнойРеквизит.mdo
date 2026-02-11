@@ -12,7 +12,7 @@
   <name>Ф_ИзмерениеСоставнойРеквизит</name>
   <synonym>
     <key>ru</key>
-    <value>Ф измерение составной реквизит</value>
+    <value>Измерение составной реквизит</value>
   </synonym>
   <useStandardCommands>true</useStandardCommands>
   <editType>InDialog</editType>

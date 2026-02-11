@@ -11,7 +11,7 @@
   <name>Ф_БизнесПроцесс</name>
   <synonym>
     <key>ru</key>
-    <value>Ф бизнес процесс</value>
+    <value>Бизнес процесс</value>
   </synonym>
   <useStandardCommands>true</useStandardCommands>
   <inputByString>BusinessProcess.Ф_БизнесПроцесс.StandardAttribute.Number</inputByString>

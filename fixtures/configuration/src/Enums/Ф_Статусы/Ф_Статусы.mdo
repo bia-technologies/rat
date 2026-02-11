@@ -8,7 +8,7 @@
   <name>Ф_Статусы</name>
   <synonym>
     <key>ru</key>
-    <value>Ф статусы</value>
+    <value>Статусы</value>
   </synonym>
   <quickChoice>true</quickChoice>
   <choiceMode>BothWays</choiceMode>
