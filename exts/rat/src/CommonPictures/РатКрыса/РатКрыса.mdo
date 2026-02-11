@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CommonPicture xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e995353d-fe33-476a-b46b-84b4bac3d4c3">
+  <name>РатКрыса</name>
+  <synonym>
+    <key>ru</key>
+    <value>Крыса</value>
+  </synonym>
+</mdclass:CommonPicture>

@@ -10,7 +10,7 @@
   <name>Ф_Чек</name>
   <synonym>
     <key>ru</key>
-    <value>Ф чек</value>
+    <value>Чек</value>
   </synonym>
   <useStandardCommands>true</useStandardCommands>
   <inputByString>Document.Ф_Чек.StandardAttribute.Number</inputByString>

@@ -10,7 +10,7 @@
   <name>Ф_ТестированиеМонитораИзменений</name>
   <synonym>
     <key>ru</key>
-    <value>Ф тестирование монитора изменений</value>
+    <value>Тестирование монитора изменений</value>
   </synonym>
   <useStandardCommands>true</useStandardCommands>
   <inputByString>Document.Ф_ТестированиеМонитораИзменений.StandardAttribute.Number</inputByString>

@@ -89,7 +89,7 @@
   <commonModules>CommonModule.ОМ_РатПреобразованияСистемныеПеречисления</commonModules>
   <commonModules>CommonModule.ОМ_РатПреобразованияСсылки</commonModules>
   <commonModules>CommonModule.ОМ_РатРегламентныеЗадания</commonModules>
-  <commonModules>CommonModule.ОМ_РатСборДанных</commonModules>
+  <commonModules>CommonModule.ОМ_РатСборДанныхСлужебный</commonModules>
   <commonModules>CommonModule.ОМ_РатСервис</commonModules>
   <commonModules>CommonModule.ОМ_РатСериализация</commonModules>
   <commonModules>CommonModule.ОМ_РатСпецификация</commonModules>

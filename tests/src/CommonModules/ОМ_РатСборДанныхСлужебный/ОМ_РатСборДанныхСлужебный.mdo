@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mdclass:CommonModule xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="cf3a1b5e-ff18-4d70-89e9-05a20ed7ed95">
-  <name>ОМ_РатСборДанных</name>
+  <name>ОМ_РатСборДанныхСлужебный</name>
   <synonym>
     <key>ru</key>
-    <value>О м рат сбор данных</value>
+    <value>Тесты: Сбор данных служебный</value>
   </synonym>
   <server>true</server>
 </mdclass:CommonModule>

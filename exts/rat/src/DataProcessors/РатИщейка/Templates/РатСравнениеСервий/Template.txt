@@ -1,0 +1,1318 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>1C Text Diff</title>
+  <style>
+    :root {
+      --header-bg: #f8f9fb;
+      --ui-border: #cfd6e0;
+
+      --t-add: rgb(18, 102, 72);
+      --t-del: rgb(168, 45, 45);
+      --t-chg: rgb(176, 104, 0);
+      --t-neutral: #4f5762;
+
+      --bg-add: rgba(18, 102, 72, 0.08);
+      --bg-del: rgba(168, 45, 45, 0.08);
+      --bg-chg: rgba(176, 104, 0, 0.06);
+
+      --bg-add-soft: rgba(18, 102, 72, 0.05);
+      --bg-del-soft: rgba(168, 45, 45, 0.05);
+
+      --arrow: rgba(60, 60, 60, 0.3);
+      --mono: "JetBrains Mono", "Cascadia Mono", "Consolas", monospace;
+      --sans: "PT Sans", "Segoe UI", Tahoma, sans-serif;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      color: #1f2a37;
+      min-height: 100%;
+      overflow: hidden;
+    }
+
+    .layout {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      padding: 0;
+      min-height: 100vh;
+      height: 100vh;
+    }
+
+    .hidden {
+      display: none;
+    }
+    .info-btn {
+      position: fixed;
+      top: 12px;
+      right: 12px;
+      z-index: 20;
+      border: 1px solid var(--ui-border);
+      background: #ffffff4d;
+      border-radius: 8px;
+      padding: 6px 10px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .info-panel {
+      position: fixed;
+      top: 44px;
+      right: 12px;
+      width: 360px;
+      max-width: calc(100% - 24px);
+      max-height: calc(100% - 56px);
+      overflow: auto;
+      background: #ffffff;
+      border: 1px solid var(--ui-border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      z-index: 20;
+      display: none;
+    }
+    .info-panel h4 {
+      margin: 0 0 6px;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #3f4a56;
+    }
+    .info-panel p {
+      margin: 0 0 8px;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+    .info-panel ul {
+      margin: 0 0 8px 16px;
+      padding: 0;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .chip {
+      border: 1px solid var(--ui-border);
+      padding: 6px 10px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+    }
+
+    .results {
+      border: none;
+      border-radius: 10px;
+      padding: 12px 16px 20px;
+      box-shadow: none;
+      max-width: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+      flex: 1 1 auto;
+      min-height: 0;
+    }
+
+    .value {
+      font-family: var(--mono);
+      white-space: pre-wrap;
+      word-break: break-word;
+      border: 1px solid var(--ui-border);
+      padding: 6px 8px;
+      min-height: 28px;
+    }
+
+    .value.empty {
+      font-style: italic;
+    }
+
+    .table-wrap {
+      border: 1px solid var(--ui-border);
+      border-radius: 8px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      margin-bottom: 10px;
+      max-width: 100%;
+      display: inline-block;
+      width: auto;
+      scrollbar-width: thin;
+    }
+
+    .table-wrap.no-scroll {
+      scrollbar-width: none;
+    }
+
+    .table-wrap.no-scroll::-webkit-scrollbar {
+      height: 0;
+    }
+
+    .group-summary {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      padding: 4px 2px 6px;
+    }
+
+    .group-summary .chip {
+      padding: 3px 8px;
+      font-size: 10px;
+    }
+
+    .chip.changed {
+      border-color: rgba(197, 122, 0, 0.45);
+      background: var(--bg-chg);
+      color: var(--t-chg);
+    }
+
+    .chip.added {
+      border-color: rgba(46, 125, 50, 0.45);
+      background: var(--bg-add);
+      color: var(--t-add);
+    }
+
+    .chip.removed {
+      border-color: rgba(198, 40, 40, 0.45);
+      background: var(--bg-del);
+      color: var(--t-del);
+    }
+
+    .chip.unchanged {
+      border-color: rgba(120, 120, 120, 0.35);
+      background: rgba(120, 120, 120, 0.06);
+      color: var(--t-neutral);
+    }
+
+    table.diff-table {
+      width: max-content;
+      min-width: 0;
+      border-collapse: collapse;
+      font-size: 12px;
+      display: inline-table;
+      border: 1px solid var(--ui-border);
+      max-width: 100%;
+    }
+
+    table.diff-table th,
+    table.diff-table td {
+      padding: 6px 8px;
+      vertical-align: top;
+      white-space: nowrap;
+      border-bottom: 1px solid var(--ui-border);
+      border-top: none;
+      border-left: none;
+    }
+
+    table.diff-table.struct-table td {
+      white-space: pre-wrap;
+    }
+
+    table.diff-table th {
+      letter-spacing: 0.08em;
+      font-size: 12px;
+      color: #3f4a56;
+      background: var(--header-bg);
+      text-align: left;
+    }
+
+    .field-path {
+      font-family: var(--mono);
+      word-break: break-word;
+    }
+
+    .struct-field {
+      font-family: var(--sans);
+      color: #3f4a56;
+      letter-spacing: 0.08em;
+      font-size: 12px;
+      background: var(--header-bg) !important;
+      font-weight: 700;
+    }
+
+    .row-added td {
+      background: var(--bg-add);
+    }
+
+    .row-removed td {
+      background: var(--bg-del);
+    }
+
+    .row-changed .field-path,
+    .row-changed .struct-field {
+      background: var(--bg-chg);
+    }
+
+    .value.cell-compare {
+      padding: 0;
+    }
+
+    .row-unchanged td {
+      background: transparent;
+    }
+
+    .row-spacer,
+    .row-spacer td {
+      padding: 0 !important;
+      height: 4px !important;
+      background-color: #cfd6e01c;
+    }
+
+    .pair-top td,
+    .pair-bottom td,
+    .cell-right {
+      position: relative;
+    }
+
+
+    .cell-compare {
+      overflow: hidden;
+    }
+
+    .cell-right::before {
+      content: "⇩";
+      position: absolute;
+      top: 6px;
+      left: -5px;
+      transform: rotate(270deg);
+      color: var(--arrow);
+      font-size: 12px;
+      font-weight: bolder;
+      pointer-events: none;
+    }
+
+    .cell-compare .cell-left,
+    .cell-compare .cell-right {
+      width: 50%;
+      display: inherit;
+      padding: 6px 8px;
+      min-height: 100%;
+    }
+
+    .cell-compare .cell-left {
+      background: var(--bg-del-soft);
+      color: var(--t-del);
+    }
+
+    .cell-compare .cell-right {
+      background: var(--bg-add-soft);
+      color: var(--t-add);
+    }
+
+
+    .pair-bottom td::before {
+      content: "⇩";
+      position: absolute;
+      left: -1px;
+      bottom: -9px;
+      color: var(--arrow);
+      font-size: 12px;
+      font-weight: bolder;
+      pointer-events: none;
+    }
+
+    .cell-compare-single {
+      padding: 5px 6px;
+    }
+
+    .diff-del {
+      background: var(--bg-del);
+      text-decoration: line-through;
+    }
+
+    .diff-add {
+      background: var(--bg-add);
+    }
+
+    .group {
+      margin-top: 10px;
+      background: transparent;
+    }
+
+    .group-toggle {
+      width: 100%;
+      text-align: left;
+      background: transparent;
+      border: none;
+      padding: 6px 2px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .group-toggle::before {
+      content: "▾";
+      display: inline-block;
+      transform: translateY(-1px);
+    }
+
+    .group[data-open="false"] .group-toggle::before {
+      content: "▸";
+    }
+
+    .group-body {
+      margin-top: 4px;
+    }
+
+    .group[data-open="false"] .group-body {
+      display: none;
+    }
+
+    .group.table-group {
+      margin: 8px 0 10px;
+      background: transparent;
+      max-width: 100%;
+    }
+
+    .group.table-group .group-toggle {
+      padding: 6px 2px;
+    }
+
+    @media (max-width: 980px) {
+
+      table.diff-table th,
+      table.diff-table td {
+        padding: 6px 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="layout">
+    <button type="button" class="info-btn" id="infoBtn" aria-label="О инструменте">ⓘ</button>
+    <div class="info-panel" id="infoPanel" aria-hidden="true">
+      <h4>Назначение</h4>
+      <p>Визуальное сравнение сериализованных объектов 1С (структуры и таблицы) с акцентом на поиск изменений.</p>
+      <h4>Возможности</h4>
+      <ul>
+        <li>Сравнение структур с подсветкой отличий.</li>
+        <li>Сравнение табличных частей с выравниванием строк.</li>
+        <li>Поддержка вложенных структур и таблиц.</li>
+        <li>Подсветка изменений внутри ячеек.</li>
+      </ul>
+      <h4>Алгоритмы</h4>
+      <ul>
+        <li>Выравнивание строк таблиц: динамическое программирование.</li>
+        <li>Сходство строк: расстояние Левенштейна (Вагнер–Фишер).</li>
+        <li>Подсветка изменений: LCS по символам.</li>
+      </ul>
+    </div>
+    <div class="hidden">
+      <textarea id="leftInput"></textarea>
+      <textarea id="rightInput"></textarea>
+    </div>
+
+    <div class="results">
+      <div id="jsonError" class="value hidden" role="alert" aria-live="polite"></div>
+      <div id="structBody"></div>
+      <div id="tablesBody"></div>
+    </div>
+  </div>
+
+  <script>
+    const leftInput = document.getElementById('leftInput');
+    const rightInput = document.getElementById('rightInput');
+    const structBody = document.getElementById('structBody');
+    const tablesBody = document.getElementById('tablesBody');
+    const jsonError = document.getElementById('jsonError');
+    const infoBtn = document.getElementById('infoBtn');
+    const infoPanel = document.getElementById('infoPanel');
+    infoBtn.addEventListener('click', () => {
+      const open = infoPanel.style.display === 'block';
+      infoPanel.style.display = open ? 'none' : 'block';
+      infoPanel.setAttribute('aria-hidden', open ? 'true' : 'false');
+    });
+    function diffParts(s1, s2) {
+      s1 = s1 == null ? '' : String(s1);
+      s2 = s2 == null ? '' : String(s2);
+      const n = s1.length;
+      const m = s2.length;
+      if (!Number.isFinite(n) || !Number.isFinite(m)) return null;
+      if (n === 0 && m === 0) return [];
+      if (n * m > 200000) return null;
+      if (n > 4000 || m > 4000) return null;
+      const result = [];
+      const matrix = Array(n + 1).fill(null).map(() => Array(m + 1).fill(0));
+      for (let i = 1; i <= n; i++) {
+        for (let j = 1; j <= m; j++) {
+          if (s1[i - 1] === s2[j - 1]) matrix[i][j] = matrix[i - 1][j - 1] + 1;
+          else matrix[i][j] = Math.max(matrix[i - 1][j], matrix[i][j - 1]);
+        }
+      }
+      let i = n;
+      let j = m;
+      while (i > 0 && j > 0) {
+        if (s1[i - 1] === s2[j - 1]) {
+          result.push({ type: 'eq', value: s1[i - 1] });
+          i--; j--;
+        } else if (matrix[i - 1][j] >= matrix[i][j - 1]) {
+          result.push({ type: 'del', value: s1[i - 1] });
+          i--;
+        } else {
+          result.push({ type: 'add', value: s2[j - 1] });
+          j--;
+        }
+      }
+      while (i > 0) { result.push({ type: 'del', value: s1[i - 1] }); i--; }
+      while (j > 0) { result.push({ type: 'add', value: s2[j - 1] }); j--; }
+      result.reverse();
+      return result;
+    }
+
+    function levenshteinDistance(a, b) {
+      if (a === b) return 0;
+      const n = a.length;
+      const m = b.length;
+      if (n === 0) return m;
+      if (m === 0) return n;
+      const dp = Array.from({ length: n + 1 }, () => new Array(m + 1).fill(0));
+      for (let i = 0; i <= n; i++) dp[i][0] = i;
+      for (let j = 0; j <= m; j++) dp[0][j] = j;
+      for (let i = 1; i <= n; i++) {
+        for (let j = 1; j <= m; j++) {
+          const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+          dp[i][j] = Math.min(
+            dp[i - 1][j] + 1,
+            dp[i][j - 1] + 1,
+            dp[i - 1][j - 1] + cost
+          );
+        }
+      }
+      return dp[n][m];
+    }
+
+    function partsToHtml(parts, side) {
+      if (!parts) return null;
+      return parts.map(p => {
+        if (p.type === 'eq') return escapeHtml(p.value);
+        if (side === 'left' && p.type === 'add') return '';
+        if (side === 'right' && p.type === 'del') return '';
+        const cls = p.type === 'add' ? 'diff-add' : 'diff-del';
+        return `<span class="${cls}">${escapeHtml(p.value)}</span>`;
+      }).join('');
+    }
+
+    function escapeHtml(str) {
+      return str.replace(/[&<>"']/g, s => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+      }[s]));
+    }
+
+    function loadSample() {
+      leftInput.value = JSON.stringify({
+        "type": "structure",
+        "fields": {
+          "Номер": "000000123",
+          "Дата и время": "2026-02-08",
+          "Контрагент": "ООО Ромашка — Дистрибьюция и сервисное обслуживание оборудования для офисов и складов",
+          "Комментарий": "Поставка по договору 458/2025 от 12.01.2026. Условия: предоплата 50%, остаток в течение 10 рабочих дней после отгрузки. Дополнительно: согласовать график доставки с логистом.",
+          "Товары": {
+            "type": "table",
+            "name": "Товары и услуги",
+            "columns": ["Номенклатура", "Количество", "Цена"],
+            "rows": [
+              { "id": "2f1a9c", "cells": { "Номенклатура": "Кофе", "Количество": "10", "Цена": "350" } },
+              { "id": "9b88d1", "cells": { "Номенклатура": "Чай", "Количество": "5", "Цена": "200" } },
+              { "id": "L-001", "cells": { "Номенклатура": "Стол офисный", "Количество": "2", "Цена": "12500" } }
+            ]
+          },
+          "ШирокаяТаблица": {
+            "type": "table",
+            "columns": ["Колонка1", "Колонка2", "Колонка3", "Колонка4", "Колонка5", "Колонка6", "Колонка7", "Колонка8", "Колонка9", "Колонка10", "Колонка11", "Колонка12", "Колонка13", "Колонка14"],
+            "rows": [
+              {
+                "id": "A-001",
+                "cells": {
+                  "Колонка1": "A1",
+                  "Колонка2": "A2",
+                  "Колонка3": "A3",
+                  "Колонка4": "A4",
+                  "Колонка5": "A5",
+                  "Колонка6": "A6",
+                  "Колонка7": "A7",
+                  "Колонка8": "A8",
+                  "Колонка9": "A9",
+                  "Колонка10": "A10",
+                  "Колонка11": "A11",
+                  "Колонка12": "A12",
+                  "Колонка13": "A13",
+                  "Колонка14": "A14"
+                }
+              }, {
+                "id": "A-002",
+                "cells": {
+                  "Колонка1": "B1",
+                  "Колонка2": "B2",
+                  "Колонка3": "B3",
+                  "Колонка4": "B4",
+                  "Колонка5": "B5",
+                  "Колонка6": "B6",
+                  "Колонка7": "B7",
+                  "Колонка8": "B8",
+                  "Колонка9": "B9",
+                  "Колонка10": "B10",
+                  "Колонка11": "B11",
+                  "Колонка12": "B12",
+                  "Колонка13": "B13",
+                  "Колонка14": "B14"
+                }
+              }
+            ]
+          }
+        }
+      }, null, 2);
+      rightInput.value = JSON.stringify({
+        "$format": "1c-diff-json-1",
+        "type": "structure",
+        "fields": {
+          "Номер": "000000123",
+          "Дата": "2026-02-09",
+          "Контрагент": "ООО Ромашка — Дистрибьюция и сервисное обслуживание оборудования для офисов и складов",
+          "Комментарий": "Поставка по договору 458/2025 от 12.01.2026. Условия: предоплата 50%, остаток в течение 10 рабочих дней после отгрузки. Дополнительно: доставку перенесли на пятницу, связаться с складом.",
+          "Товары": {
+            "type": "table",
+            "columns": ["Номенклатура", "Количество", "Цена"],
+            "rows": [
+              { "id": "2f1a9c", "cells": { "Номенклатура": "Кофе", "Количество": "12", "Цена": "350" } },
+              { "id": "9b88d1", "cells": { "Номенклатура": "Чай", "Количество": "5", "Цена": "220" } },
+              { "id": "77a221", "cells": { "Номенклатура": "Сахар", "Количество": "3", "Цена": "90" } },
+              { "id": "L-001", "cells": { "Номенклатура": "Принтер лазерный", "Количество": "1", "Цена": "54000" } }
+            ]
+          },
+          "ШирокаяТаблица": {
+            "type": "table",
+            "columns": ["Колонка1", "Колонка2", "Колонка3", "Колонка4", "Колонка5", "Колонка6", "Колонка7", "Колонка8", "Колонка9", "Колонка10", "Колонка11", "Колонка12", "Колонка13", "Колонка14"],
+            "rows": [
+              {
+                "id": "A-001",
+                "cells": {
+                  "Колонка1": "C1",
+                  "Колонка2": "C2",
+                  "Колонка3": "C3",
+                  "Колонка4": "C4",
+                  "Колонка5": "C5",
+                  "Колонка6": "C6",
+                  "Колонка7": "C7",
+                  "Колонка8": "C8",
+                  "Колонка9": "C9",
+                  "Колонка10": "C10",
+                  "Колонка11": "C11",
+                  "Колонка12": "C12",
+                  "Колонка13": "C13",
+                  "Колонка14": "C14"
+                }
+              }, {
+                "id": "A-002",
+                "cells": {
+                  "Колонка1": "A1",
+                  "Колонка2": "A2",
+                  "Колонка3": "A3",
+                  "Колонка4": "A4",
+                  "Колонка5": "A5-changed",
+                  "Колонка6": "A6",
+                  "Колонка7": "A7",
+                  "Колонка8": "A8",
+                  "Колонка9": "A9",
+                  "Колонка10": "A10",
+                  "Колонка11": "A11",
+                  "Колонка12": "A12",
+                  "Колонка13": "A13",
+                  "Колонка14": "A14"
+                }
+              },
+              {
+                "id": "A-003",
+                "cells": {
+                  "Колонка1": "B1",
+                  "Колонка2": "B2",
+                  "Колонка3": "B3",
+                  "Колонка4": "B4",
+                  "Колонка5": "B5",
+                  "Колонка6": "B6",
+                  "Колонка7": "B7",
+                  "Колонка8": "B8",
+                  "Колонка9": "B9",
+                  "Колонка10": "B10",
+                  "Колонка11": "B11",
+                  "Колонка12": "B12",
+                  "Колонка13": "B13",
+                  "Колонка14": "B14"
+                }
+              }
+            ]
+          }
+        }
+      }, null, 2);
+      compare();
+    }
+
+    window.setLeftVersion = function setLeftVersion(jsonText) {
+      leftInput.value = typeof jsonText === 'string' ? jsonText : JSON.stringify(jsonText, null, 2);
+      compare();
+    };
+
+    window.setRightVersion = function setRightVersion(jsonText) {
+      rightInput.value = typeof jsonText === 'string' ? jsonText : JSON.stringify(jsonText, null, 2);
+      compare();
+    };
+
+    window.setVersions = function setVersions(leftJsonText, rightJsonText) {
+      window.setLeftVersion(leftJsonText);
+      window.setRightVersion(rightJsonText);
+    };
+
+    function sortKeys(value) {
+      if (Array.isArray(value)) return value.map(sortKeys);
+      if (value && typeof value === 'object') {
+        const out = {};
+        Object.keys(value).sort().forEach(k => out[k] = sortKeys(value[k]));
+        return out;
+      }
+      return value;
+    }
+
+    function parseJson(text) {
+      if (!text.trim()) return null;
+      try {
+        const obj = JSON.parse(text);
+        return { node: normalizeValue(obj), error: null };
+      } catch (e) {
+        console.warn(`Ошибка JSON: ${e.message}`);
+        return { node: null, error: e.message || 'Ошибка JSON' };
+      }
+    }
+
+    function normalizeValue(value) {
+      if (value && typeof value === 'object') {
+        if (value.type === 'table') return normalizeTable(value);
+        if (value.type === 'structure') {
+          const fields = value.fields || {};
+          const normalizedFields = {};
+          Object.keys(fields).forEach(k => normalizedFields[k] = normalizeValue(fields[k]));
+          return { kind: 'structure', fields: normalizedFields };
+        }
+        if (Array.isArray(value)) return { kind: 'value', value };
+        const normalizedFields = {};
+        Object.keys(value).forEach(k => normalizedFields[k] = normalizeValue(value[k]));
+        return { kind: 'structure', fields: normalizedFields };
+      }
+      return { kind: 'value', value };
+    }
+
+    function normalizeTable(value) {
+      const columns = Array.isArray(value.columns) ? value.columns.slice() : [];
+      const rows = Array.isArray(value.rows) ? value.rows : [];
+      const normalizedRows = rows.map((row, index) => normalizeRow(row, index, columns));
+      if (!columns.length) {
+        const set = new Set();
+        normalizedRows.forEach(r => Object.keys(r.cells).forEach(c => set.add(c)));
+        columns.push(...set);
+      }
+      const name = typeof value.name === 'string' ? value.name : typeof value.title === 'string' ? value.title : null;
+      const hasExplicitIds = normalizedRows.some(r => r.hasExplicitId);
+      return { kind: 'table', columns, rows: normalizedRows, name, hasExplicitIds };
+    }
+
+    function normalizeRow(row, index, columns) {
+      const explicit = row && (row.id !== undefined || row.$id !== undefined || row.key !== undefined);
+      const displayId = explicit ? String(row.id ?? row.$id ?? row.key) : String(index + 1);
+      let cells = row?.cells ?? row?.values ?? row;
+      if (Array.isArray(cells)) {
+        const obj = {};
+        columns.forEach((c, i) => obj[c] = cells[i]);
+        cells = obj;
+      }
+      if (!cells || typeof cells !== 'object') cells = {};
+      const normalized = {};
+      Object.keys(cells).forEach(k => normalized[k] = normalizeValue(cells[k]));
+      return { id: displayId, displayId, cells: normalized, hasExplicitId: explicit };
+    }
+
+    function stringifyValue(node) {
+      if (!node) return '';
+      if (node.kind === 'value') {
+        if (node.value === null) return 'null';
+        if (node.value === undefined) return 'undefined';
+        if (typeof node.value === 'string') return node.value;
+        return String(node.value);
+      }
+      if (node.kind === 'table') {
+        const rows = node.rows ? node.rows.length : 0;
+        const cols = node.columns ? node.columns.length : 0;
+        return `[table ${rows}x${cols}]`;
+      }
+      if (node.kind === 'structure') {
+        return shorten(JSON.stringify(nodeToPlain(node)), 200);
+      }
+      return shorten(JSON.stringify(node), 200);
+    }
+
+    function nodeToPlain(node) {
+      if (!node || typeof node !== 'object') return node;
+      if (node.kind === 'value') return node.value;
+      if (node.kind === 'table') {
+        return {
+          type: 'table',
+          columns: node.columns || [],
+          rows: (node.rows || []).map(r => {
+            const cells = {};
+            Object.keys(r.cells || {}).forEach(k => {
+              cells[k] = nodeToPlain(r.cells[k]);
+            });
+            return { id: r.id, cells };
+          })
+        };
+      }
+      if (node.kind === 'structure') {
+        const out = {};
+        Object.keys(node.fields || {}).forEach(k => out[k] = nodeToPlain(node.fields[k]));
+        return out;
+      }
+      return node;
+    }
+
+    function shorten(str, max) {
+      if (typeof str !== 'string') return String(str);
+      if (str.length <= max) return str;
+      return str.slice(0, max - 1) + '…';
+    }
+
+    function cellTextFromRow(row, column) {
+      if (!row || !row.cells) return '';
+      const v = row.cells[column];
+      if (v && typeof v === 'object') {
+        if (v.kind) return stringifyValue(v);
+        try { return JSON.stringify(v); } catch (_) { return String(v); }
+      }
+      if (v === null) return 'null';
+      if (v === undefined) return '';
+      return String(v);
+    }
+
+    function collect(node, path, accFields, accTables) {
+      if (!node) return;
+      if (node.kind === 'structure') {
+        Object.keys(node.fields).forEach(name => {
+          const nextPath = path ? `${path}.${name}` : name;
+          const child = node.fields[name];
+          if (child.kind === 'table') accTables.set(nextPath, child);
+          else if (child.kind === 'structure') collect(child, nextPath, accFields, accTables);
+          else accFields.set(nextPath, stringifyValue(child));
+        });
+      } else if (node.kind === 'table') {
+        accTables.set(path || 'ROOT', node);
+      } else {
+        accFields.set(path || 'ROOT', stringifyValue(node));
+      }
+    }
+
+    function compare() {
+      const leftParsed = parseJson(leftInput.value);
+      const rightParsed = parseJson(rightInput.value);
+      const leftRoot = leftParsed?.node ?? null;
+      const rightRoot = rightParsed?.node ?? null;
+      const errors = [];
+      if (leftParsed?.error) errors.push(`Левая версия: ${leftParsed.error}`);
+      if (rightParsed?.error) errors.push(`Правая версия: ${rightParsed.error}`);
+      if (errors.length) {
+        jsonError.textContent = errors.join(' | ');
+        jsonError.classList.remove('hidden');
+      } else {
+        jsonError.textContent = '';
+        jsonError.classList.add('hidden');
+      }
+      if (!leftRoot && !rightRoot) {
+        structBody.innerHTML = '';
+        tablesBody.innerHTML = '';
+        return;
+      }
+      const leftFields = new Map();
+      const rightFields = new Map();
+      const leftTables = new Map();
+      const rightTables = new Map();
+      if (leftRoot) collect(leftRoot, '', leftFields, leftTables);
+      if (rightRoot) collect(rightRoot, '', rightFields, rightTables);
+
+      const fieldRows = buildFieldRows(leftFields, rightFields);
+      const tableDiffs = buildTableDiffs(leftTables, rightTables);
+
+      renderStructures(fieldRows);
+      renderTables(tableDiffs);
+      requestAnimationFrame(adjustTableScrolls);
+    }
+
+    function zeroCounts() {
+      return { changed: 0, added: 0, removed: 0, unchanged: 0 };
+    }
+
+    function buildFieldRows(left, right) {
+      const keys = new Set([...left.keys(), ...right.keys()]);
+      const rows = [];
+      keys.forEach(key => {
+        const l = left.has(key) ? left.get(key) : null;
+        const r = right.has(key) ? right.get(key) : null;
+        let status = 'unchanged';
+        if (l === null && r !== null) status = 'added';
+        else if (l !== null && r === null) status = 'removed';
+        else if (l !== r) status = 'changed';
+        rows.push({ key, l, r, status });
+      });
+      return rows.sort((a, b) => a.key.localeCompare(b.key));
+    }
+
+    function buildTableDiffs(left, right) {
+      const paths = new Set([...left.keys(), ...right.keys()]);
+      const diffs = [];
+      paths.forEach(path => {
+        const lt = left.get(path) || null;
+        const rt = right.get(path) || null;
+        const title = lt?.name || rt?.name || null;
+        const columns = mergeColumns(lt?.columns, rt?.columns);
+        const rows = alignRows(lt?.rows || [], rt?.rows || [], columns, path);
+        diffs.push({ path, title, columns, rows });
+      });
+      return diffs.sort((a, b) => a.path.localeCompare(b.path));
+    }
+
+    function mergeColumns(a, b) {
+      const cols = [];
+      const set = new Set();
+      (a || []).forEach(c => { if (!set.has(c)) { set.add(c); cols.push(c); } });
+      (b || []).forEach(c => { if (!set.has(c)) { set.add(c); cols.push(c); } });
+      return cols;
+    }
+
+    function mapRows(table, columns) {
+      const map = new Map();
+      if (!table) return map;
+      table.rows.forEach((row, index) => {
+        const id = row.id || String(index + 1);
+        const cells = {};
+        columns.forEach(c => {
+          const node = row.cells[c];
+          cells[c] = node ? stringifyValue(node) : null;
+        });
+        map.set(id, { id, cells });
+      });
+      return map;
+    }
+
+    function alignRows(leftRows, rightRows, columns, path) {
+      const n = leftRows.length;
+      const m = rightRows.length;
+      if (n * m > 50000) {
+        logDecision(path, `${n}x${m}`, 'fallback', 'слишком большая матрица для выравнивания');
+        return alignRowsFallback(leftRows, rightRows, columns);
+      }
+      const dp = Array.from({ length: n + 1 }, () => new Array(m + 1).fill(0));
+      const move = Array.from({ length: n + 1 }, () => new Array(m + 1).fill(''));
+      const delCost = 1;
+      const insCost = 1;
+      dp[0][0] = 0;
+      for (let i = 1; i <= n; i++) {
+        dp[i][0] = dp[i - 1][0] + delCost;
+        move[i][0] = 'D';
+      }
+      for (let j = 1; j <= m; j++) {
+        dp[0][j] = dp[0][j - 1] + insCost;
+        move[0][j] = 'I';
+      }
+      for (let i = 1; i <= n; i++) {
+        for (let j = 1; j <= m; j++) {
+          const l = leftRows[i - 1];
+          const r = rightRows[j - 1];
+          const sim = similarityScore(l, r, columns);
+          const subCost = sim.same ? 0 : sim.similar ? 0.5 : 2;
+          const del = dp[i - 1][j] + delCost;
+          const ins = dp[i][j - 1] + insCost;
+          const sub = dp[i - 1][j - 1] + subCost;
+          const best = Math.min(del, ins, sub);
+          dp[i][j] = best;
+          move[i][j] = best === sub ? 'S' : best === del ? 'D' : 'I';
+        }
+      }
+      const rows = [];
+      let i = n;
+      let j = m;
+      while (i > 0 || j > 0) {
+        const mv = move[i][j];
+        if (mv === 'S') {
+          const l = leftRows[i - 1];
+          const r = rightRows[j - 1];
+          const sim = similarityScore(l, r, columns);
+          const id = l?.displayId ?? r?.displayId ?? `${i}`;
+          const groupId = `g-${i}-${j}`;
+          if (sim.same) {
+            logDecision(path, id, 'unchanged', 'совпало по содержимому');
+            rows.push({ id, l, r, status: 'unchanged', groupId });
+          } else if (sim.similar) {
+            logDecision(path, id, 'changed', 'сопоставлено по близости');
+            rows.push({ id, l, r, status: 'changed', groupId });
+          } else {
+            logDecision(path, id, 'removed+added', 'слишком отличается после выравнивания');
+            const pairId = `pair-${i}-${j}`;
+            rows.push({ id, l, r: null, status: 'removed', pair: r, groupId: pairId });
+            rows.push({ id, l: null, r, status: 'added', pair: l, groupId: pairId });
+          }
+          i--; j--;
+        } else if (mv === 'D') {
+          const l = leftRows[i - 1];
+          const id = l?.displayId ?? `${i}`;
+          logDecision(path, id, 'removed', 'удалено при выравнивании');
+          rows.push({ id, l, r: null, status: 'removed', groupId: `g-${i}-d` });
+          i--;
+        } else {
+          const r = rightRows[j - 1];
+          const id = r?.displayId ?? `${j}`;
+          logDecision(path, id, 'added', 'добавлено при выравнивании');
+          rows.push({ id, l: null, r, status: 'added', groupId: `g-${j}-i` });
+          j--;
+        }
+      }
+      return rows.reverse();
+    }
+
+    function alignRowsFallback(leftRows, rightRows, columns) {
+      const leftMap = new Map();
+      const rightMap = new Map();
+      leftRows.forEach((row, index) => {
+        const id = row.displayId ?? row.id ?? String(index + 1);
+        leftMap.set(id, row);
+      });
+      rightRows.forEach((row, index) => {
+        const id = row.displayId ?? row.id ?? String(index + 1);
+        rightMap.set(id, row);
+      });
+      const ids = [];
+      const idSet = new Set();
+      leftRows.forEach((row, index) => {
+        const id = row.displayId ?? row.id ?? String(index + 1);
+        if (!idSet.has(id)) {
+          idSet.add(id);
+          ids.push(id);
+        }
+      });
+      rightRows.forEach((row, index) => {
+        const id = row.displayId ?? row.id ?? String(index + 1);
+        if (!idSet.has(id)) {
+          idSet.add(id);
+          ids.push(id);
+        }
+      });
+      return ids.map((id, i) => {
+        const l = leftMap.get(id) || null;
+        const r = rightMap.get(id) || null;
+        let status = 'unchanged';
+        if (l && r && rowsEqual(l, r, columns)) status = 'unchanged';
+        else if (l && r) status = 'changed';
+        else if (l && !r) status = 'removed';
+        else status = 'added';
+        return { id, l, r, status, groupId: `fallback-${i}` };
+      });
+    }
+
+    function similarityScore(l, r, columns) {
+      if (!l || !r) return { same: false, similar: false };
+      if (rowsEqual(l, r, columns)) return { same: true, similar: true };
+      const left = getRowSignature(l, columns);
+      const right = getRowSignature(r, columns);
+      const maxLen = Math.max(left.length, right.length);
+      if (maxLen === 0) return { same: true, similar: true };
+      if (maxLen > 300) {
+        const sim = tokenSimilarity(left, right);
+        return { same: false, similar: sim >= 0.6 };
+      }
+      const dist = levenshteinDistance(left, right);
+      const ratio = dist / maxLen;
+      return { same: false, similar: ratio <= 0.4 };
+    }
+
+    function rowsEqual(l, r, columns) {
+      if (!l || !r) return false;
+      for (const c of columns) {
+        if ((l.cells[c] ?? null) !== (r.cells[c] ?? null)) return false;
+      }
+      return true;
+    }
+
+    const rowSignatureCache = new WeakMap();
+    function getRowSignature(row, columns) {
+      if (!row) return '';
+      const key = columns.join('\u0001');
+      let byCols = rowSignatureCache.get(row);
+      if (!byCols) {
+        byCols = new Map();
+        rowSignatureCache.set(row, byCols);
+      }
+      if (byCols.has(key)) return byCols.get(key);
+      const sig = rowSignature(row, columns);
+      byCols.set(key, sig);
+      return sig;
+    }
+
+    function rowSignature(row, columns) {
+      return columns.map(c => cellTextFromRow(row, c)).join('|');
+    }
+
+    function tokenSimilarity(a, b) {
+      const left = tokenize(a);
+      const right = tokenize(b);
+      if (left.size === 0 && right.size === 0) return 1;
+      let inter = 0;
+      for (const t of left) if (right.has(t)) inter++;
+      const union = left.size + right.size - inter;
+      return union === 0 ? 0 : inter / union;
+    }
+
+    function tokenize(text) {
+      const out = new Set();
+      String(text).toLowerCase().split(/[^\\w\\u0400-\\u04FF]+/).forEach(t => {
+        if (t) out.add(t);
+      });
+      return out;
+    }
+
+    function logDecision(path, id, status, reason) {
+      try {
+        const prefix = `[1C-DIFF] ${path} :: ${id}`;
+        console.log(`${prefix} -> ${status}. Причина: ${reason}`);
+      } catch (_) {
+        // ignore logging errors in restricted environments
+      }
+    }
+
+    function countStatuses(rows) {
+      const counts = zeroCounts();
+      rows.forEach(r => counts[r.status]++);
+      return counts;
+    }
+
+    function renderStructures(rows) {
+      structBody.innerHTML = '';
+      if (!rows.length) return;
+      const tableWrap = document.createElement('div');
+      tableWrap.className = 'table-wrap';
+      const table = document.createElement('table');
+      table.className = 'diff-table struct-table';
+      table.innerHTML = ``;
+      const tbody = document.createElement('tbody');
+      rows.forEach(row => {
+        const tr = document.createElement('tr');
+        tr.className = `row-${row.status}`;
+        const tdPath = document.createElement('td');
+        tdPath.className = 'struct-field';
+        tdPath.textContent = row.key;
+        const tdLeft = document.createElement('td');
+        tdLeft.className = 'value' + (row.l === null ? ' empty' : '');
+        const tdRight = document.createElement('td');
+        tdRight.className = 'value' + (row.r === null ? ' empty' : '');
+        if (row.status === 'changed') {
+          const parts = diffParts(row.l || '', row.r || '');
+          if (parts) {
+            tdLeft.innerHTML = partsToHtml(parts, 'left');
+            tdRight.innerHTML = partsToHtml(parts, 'right');
+          } else {
+            tdLeft.textContent = row.l ?? '—';
+            tdRight.textContent = row.r ?? '—';
+          }
+        } else {
+          tdLeft.textContent = row.l ?? '—';
+          tdRight.textContent = row.r ?? '—';
+        }
+        tr.appendChild(tdPath);
+        tr.appendChild(tdLeft);
+        tr.appendChild(tdRight);
+        tbody.appendChild(tr);
+      });
+      table.appendChild(tbody);
+      tableWrap.appendChild(table);
+      structBody.appendChild(tableWrap);
+    }
+
+    function renderTables(diffs) {
+      tablesBody.innerHTML = '';
+      diffs.forEach(tableDiff => {
+        const group = document.createElement('div');
+        group.className = 'group table-group';
+        group.dataset.open = 'true';
+        const toggle = document.createElement('button');
+        toggle.type = 'button';
+        toggle.className = 'group-toggle';
+        const label = tableDiff.title ? `${tableDiff.title} (${tableDiff.path})` : `Таблица: ${tableDiff.path}`;
+        toggle.textContent = label;
+        toggle.addEventListener('click', () => {
+          group.dataset.open = group.dataset.open === 'true' ? 'false' : 'true';
+        });
+        group.appendChild(toggle);
+
+        const groupTotals = countStatuses(tableDiff.rows);
+        const body = document.createElement('div');
+        body.className = 'group-body';
+        body.appendChild(renderGroupSummary(groupTotals));
+
+        const wrap = document.createElement('div');
+        wrap.className = 'table-wrap';
+
+        const table = document.createElement('table');
+        table.className = 'diff-table';
+        const thead = document.createElement('thead');
+        const headRow = document.createElement('tr');
+        const thId = document.createElement('th');
+        thId.textContent = 'ID';
+        headRow.appendChild(thId);
+        tableDiff.columns.forEach(c => {
+          const th = document.createElement('th');
+          th.textContent = c;
+          headRow.appendChild(th);
+        });
+        thead.appendChild(headRow);
+        table.appendChild(thead);
+
+        const tbody = document.createElement('tbody');
+        for (let i = 0; i < tableDiff.rows.length; i++) {
+          const row = tableDiff.rows[i];
+          const next = tableDiff.rows[i + 1];
+          if (row.status === 'removed' && row.pair && next && next.status === 'added' && next.groupId === row.groupId) {
+            tbody.appendChild(renderTableRow(row, tableDiff.columns));
+            tbody.appendChild(renderTableRow(next, tableDiff.columns));
+            i++;
+          } else if (row.status === 'changed') {
+            tbody.appendChild(renderTableRowCombined(row, tableDiff.columns));
+          } else {
+            tbody.appendChild(renderTableRow(row, tableDiff.columns));
+          }
+          const nextRow = tableDiff.rows[i + 1];
+          if (nextRow && nextRow.groupId !== row.groupId) {
+            tbody.appendChild(renderSpacerRow(tableDiff.columns.length + 1));
+          }
+        }
+        table.appendChild(tbody);
+        wrap.appendChild(table);
+        body.appendChild(wrap);
+        group.appendChild(body);
+        tablesBody.appendChild(group);
+      });
+    }
+
+    function adjustTableScrolls() {
+      document.querySelectorAll('.table-wrap').forEach(wrap => {
+        const table = wrap.querySelector('table');
+        if (!table) return;
+        const needs = table.scrollWidth > wrap.clientWidth + 1;
+        wrap.style.overflowX = needs ? 'auto' : 'hidden';
+        wrap.classList.toggle('no-scroll', !needs);
+      });
+    }
+
+    let resizeTimer = null;
+    window.addEventListener('resize', () => {
+      if (resizeTimer) clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        resizeTimer = null;
+        requestAnimationFrame(adjustTableScrolls);
+      }, 120);
+    });
+
+    function renderTableRow(row, columns, groupClass) {
+      const tr = document.createElement('tr');
+      tr.className = `row-${row.status}`;
+      if (row.pair && row.status === 'removed') tr.className += ' pair-top';
+      if (row.pair && row.status === 'added') tr.className += ' pair-bottom';
+      if (groupClass) tr.className += ` ${groupClass}`;
+      const tdId = document.createElement('td');
+      tdId.className = 'field-path';
+      tdId.textContent = row.id;
+      tr.appendChild(tdId);
+      columns.forEach(c => {
+        const td = document.createElement('td');
+        td.className = 'value';
+        const val = cellTextFromRow(row.l || row.r, c);
+        if ((row.status === 'removed' || row.status === 'added') && row.pair) {
+          const leftVal = row.l ? cellTextFromRow(row.l, c) : cellTextFromRow(row.pair, c);
+          const rightVal = row.r ? cellTextFromRow(row.r, c) : cellTextFromRow(row.pair, c);
+          const parts = diffParts(leftVal || '', rightVal || '');
+          if (parts) {
+            td.innerHTML = row.status === 'removed' ? partsToHtml(parts, 'left') : partsToHtml(parts, 'right');
+          } else {
+            td.textContent = val || '—';
+          }
+        } else {
+          td.textContent = val || '—';
+        }
+        tr.appendChild(td);
+      });
+      return tr;
+    }
+
+    function renderTableRowCombined(row, columns, groupClass) {
+      const tr = document.createElement('tr');
+      tr.className = `row-${row.status}`;
+      if (groupClass) tr.className += ` ${groupClass}`;
+      const tdId = document.createElement('td');
+      tdId.className = 'field-path';
+      tdId.textContent = row.id;
+      tr.appendChild(tdId);
+      columns.forEach(c => {
+        const td = document.createElement('td');
+        td.className = 'value';
+        const leftVal = row.l ? cellTextFromRow(row.l, c) : '';
+        const rightVal = row.r ? cellTextFromRow(row.r, c) : '';
+        const parts = diffParts(leftVal || '', rightVal || '');
+        if ((leftVal || '') === (rightVal || '')) {
+          td.className += ' cell-compare-single';
+          td.textContent = leftVal || rightVal || '—';
+        } else {
+          const left = document.createElement('div');
+          left.className = 'cell-left';
+          const right = document.createElement('div');
+          right.className = 'cell-right';
+          if (parts) {
+            left.innerHTML = partsToHtml(parts, 'left');
+            right.innerHTML = partsToHtml(parts, 'right');
+          } else {
+            left.textContent = leftVal || '—';
+            right.textContent = rightVal || '—';
+          }
+          td.className += ' cell-compare'
+          td.appendChild(left);
+          td.appendChild(right);
+        }
+        tr.appendChild(td);
+      });
+      return tr;
+    }
+
+    function renderSpacerRow(colspan) {
+      const tr = document.createElement('tr');
+      tr.className = 'row-spacer';
+      const td = document.createElement('td');
+      td.colSpan = colspan;
+      tr.appendChild(td);
+      return tr;
+    }
+
+    function renderGroupSummary(counts) {
+      const summary = document.createElement('div');
+      summary.className = 'group-summary';
+      summary.innerHTML = `
+        <span class="chip changed"><strong>${counts.changed}</strong> изменено</span>
+        <span class="chip added"><strong>${counts.added}</strong> добавлено</span>
+        <span class="chip removed"><strong>${counts.removed}</strong> удалено</span>
+        <span class="chip unchanged"><strong>${counts.unchanged}</strong> без изменений</span>
+      `;
+      return summary;
+    }
+    compare();
+  </script>
+</body>
+
+</html>

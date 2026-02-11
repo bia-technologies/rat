@@ -25,7 +25,9 @@
   <version>25.10</version>
   <subsystems>Subsystem.Рат</subsystems>
   <subsystems>Subsystem.РатАдаптацияФункциональности</subsystems>
+  <subsystems>Subsystem.РатПубличный</subsystems>
   <subsystems>Subsystem.РатРасширениеФункциональности</subsystems>
+  <commonPictures>CommonPicture.РатКрыса</commonPictures>
   <sessionParameters>SessionParameter.РатАдресВременногоКонтекста</sessionParameters>
   <commonPictures>CommonPicture.РатПодсистема</commonPictures>
   <commonTemplates>CommonTemplate.РатИнтерфейс</commonTemplates>
@@ -72,6 +74,7 @@
   <commonModules>CommonModule.РатРегламентныеЗадания</commonModules>
   <commonModules>CommonModule.РатСборДанных</commonModules>
   <commonModules>CommonModule.РатСборДанныхПодпискиНаСобытия</commonModules>
+  <commonModules>CommonModule.РатСборДанныхСлужебный</commonModules>
   <commonModules>CommonModule.РатСервис</commonModules>
   <commonModules>CommonModule.РатСервисПереопределяемый</commonModules>
   <commonModules>CommonModule.РатСериализация</commonModules>
@@ -100,5 +103,6 @@
   <eventSubscriptions>EventSubscription.РатПриЗаписиРегистраРасчета</eventSubscriptions>
   <commonCommands>CommonCommand.РатКомандныйИнтерфейсЗапросОтвет</commonCommands>
   <dataProcessors>DataProcessor.РатГенераторСценариев</dataProcessors>
+  <dataProcessors>DataProcessor.РатИщейка</dataProcessors>
   <dataProcessors>DataProcessor.РатШагиVA</dataProcessors>
 </mdclass:Configuration>

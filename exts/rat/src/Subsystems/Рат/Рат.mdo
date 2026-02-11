@@ -8,7 +8,6 @@
   </picture>
   <subsystems>ВзаимодействиеСКлиентомТестирования</subsystems>
   <subsystems>ОписаниеСервиса</subsystems>
-  <subsystems>Публичный</subsystems>
   <subsystems>РасширениеФункциональности</subsystems>
   <subsystems>Сервис</subsystems>
   <subsystems>Сериализация</subsystems>

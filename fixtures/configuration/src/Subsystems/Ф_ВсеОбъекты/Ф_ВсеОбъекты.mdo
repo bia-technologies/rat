@@ -3,7 +3,7 @@
   <name>Ф_ВсеОбъекты</name>
   <synonym>
     <key>ru</key>
-    <value>Ф все объекты</value>
+    <value>Все объекты</value>
   </synonym>
   <includeHelpInContents>true</includeHelpInContents>
   <includeInCommandInterface>true</includeInCommandInterface>
@@ -29,4 +29,12 @@
   <content>ScheduledJob.Ф_Пауза</content>
   <content>ScheduledJob.Ф_ПроизвольныйАлгоритм</content>
   <content>ScheduledJob.Ф_ФоноваяБлокировка</content>
+  <content>Document.Ф_ТестированиеМонитораИзменений</content>
+  <content>Constant.Ф_Константа</content>
+  <content>ChartOfAccounts.Ф_ПланСчетов</content>
+  <content>ChartOfCalculationTypes.Ф_ПланВидовРасчета</content>
+  <content>AccountingRegister.Ф_РегистрБухгалтерии</content>
+  <content>CalculationRegister.Ф_РегистрРасчета</content>
+  <content>BusinessProcess.Ф_БизнесПроцесс</content>
+  <content>Task.Ф_Задача</content>
 </mdclass:Subsystem>
