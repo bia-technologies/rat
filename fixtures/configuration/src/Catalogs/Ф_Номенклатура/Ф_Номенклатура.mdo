@@ -29,7 +29,7 @@
   <defaultPresentation>AsDescription</defaultPresentation>
   <editType>InDialog</editType>
   <choiceMode>BothWays</choiceMode>
-  <defaultObjectForm>Catalog.ПУБ_Номенклатура.Form.ФормаЭлемента</defaultObjectForm>
+  <defaultObjectForm>Catalog.Ф_Номенклатура.Form.ФормаЭлемента</defaultObjectForm>
   <attributes uuid="694b2f41-779b-4559-8140-63fb4bc4923d">
     <name>Картинка</name>
     <synonym>

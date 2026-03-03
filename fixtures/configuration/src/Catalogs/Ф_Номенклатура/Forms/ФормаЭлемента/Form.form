@@ -99,7 +99,7 @@
     <name>Объект</name>
     <id>1</id>
     <valueType>
-      <types>CatalogObject.ПУБ_Номенклатура</types>
+      <types>CatalogObject.Ф_Номенклатура</types>
     </valueType>
     <view>
       <common>true</common>
