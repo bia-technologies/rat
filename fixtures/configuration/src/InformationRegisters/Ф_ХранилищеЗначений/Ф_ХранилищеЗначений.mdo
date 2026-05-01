@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="fd87004e-20e2-44b6-9e16-ca4f6ab54662">
+  <producedTypes>
+    <selectionType typeId="279be7dd-2148-4fab-8eba-da5e274e683c" valueTypeId="befa953f-c283-478f-b20f-b6a579b31c5f"/>
+    <listType typeId="30300f94-7fa8-4e49-bd58-f6d29c9d804d" valueTypeId="65cc0835-be2f-46df-8f63-9c5c22e6282a"/>
+    <managerType typeId="aa7879ec-31ca-46be-b4e4-207af3a01709" valueTypeId="30c8f39d-b2cd-478b-b9e9-28f314f4d589"/>
+    <recordSetType typeId="9e12ef07-7d72-45a2-99a2-132df9614359" valueTypeId="5527bfb6-b350-43e5-a869-91dcac9ea195"/>
+    <recordKeyType typeId="b679d3c8-e23a-4c15-bc41-00be09b32387" valueTypeId="bc1dae33-a427-4342-9f61-e73c9128a03a"/>
+    <recordType typeId="47e64a95-ebf2-469f-bdbc-7c02197a2805" valueTypeId="4d180ec0-ae84-4dd1-8a02-20332173edf5"/>
+    <recordManagerType typeId="e0ee0e3a-034c-4bfc-8e73-7337f7edbe05" valueTypeId="121dc429-5acc-4d49-9607-b1578af7e577"/>
+  </producedTypes>
+  <name>Ф_ХранилищеЗначений</name>
+  <synonym>
+    <key>ru</key>
+    <value>Ф хранилище значений</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="bcb7ade9-8c9d-431f-8447-9904c496c8e9">
+    <name>Ресурс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ресурс</value>
+    </synonym>
+    <type>
+      <types>ValueStorage</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>DontUse</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="c8a86173-5527-4997-9244-88eb00dafd81">
+    <name>Измерение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Измерение</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+      <types>String</types>
+      <types>Date</types>
+      <types>Number</types>
+      <types>AnyRef</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>DontUse</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

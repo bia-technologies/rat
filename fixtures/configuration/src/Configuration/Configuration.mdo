@@ -60,6 +60,7 @@
   <informationRegisters>InformationRegister.ПУБ_ПериодическаяКонстанта</informationRegisters>
   <informationRegisters>InformationRegister.ПУБ_ПримитивныеИзмерения</informationRegisters>
   <informationRegisters>InformationRegister.ПУБ_СтатусыОбъектов</informationRegisters>
+  <informationRegisters>InformationRegister.Ф_ХранилищеЗначений</informationRegisters>
   <accumulationRegisters>AccumulationRegister.ПУБ_ОстаткиТоваров</accumulationRegisters>
   <chartsOfCharacteristicTypes>ChartOfCharacteristicTypes.ПУБ_ПВХ</chartsOfCharacteristicTypes>
 </mdclass:Configuration>
