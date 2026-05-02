@@ -1,0 +1,15 @@
+{
+  "DisableFirstRunHelper": true,
+  "DisableUserSettingsLoader": true,
+  "DisableLoadConfig": true,
+  "DisableLoadTestClientsTable": true,
+  "ClearStepsCache": true,
+
+  "ИспользоватьКомпонентуVanessaExt": false,
+
+  "МетаданныеБиблиотек": [
+    "Обработка.РатШагиVA.Форма.Форма"
+  ],
+  "ТегTreeВключенПоУмолчанию": true,
+  "ВычислятьВыраженияВФигурныхСкобках": true
+}
