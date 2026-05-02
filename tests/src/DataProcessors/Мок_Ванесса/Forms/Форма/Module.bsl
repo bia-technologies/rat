@@ -2,7 +2,7 @@
 //
 //  This file is a part of RAT.
 //
-//  Copyright © 2021-2025
+//  Copyright © 2021-2026
 //  BIA-Technologies Limited Liability Company and contributors
 //
 //  SPDX-License-Identifier: LGPL-3.0-or-later
@@ -41,6 +41,13 @@
 	
 	Контекст.Вставить(Ключ, Значение);
 	
+КонецПроцедуры
+
+&НаКлиенте
+Процедура УстановитьРезультатУсловия(Результат) Экспорт
+
+	Контекст.Вставить("РезультатУсловия", Результат);
+
 КонецПроцедуры
 
 #КонецОбласти
