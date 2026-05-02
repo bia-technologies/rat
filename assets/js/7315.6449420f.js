@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkrat=self.webpackChunkrat||[]).push([["7315"],{6366(e,r,c){c.d(r,{createArchitectureServices:()=>t.S});var t=c(8980);c(7342)}}]);
