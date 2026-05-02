@@ -102,6 +102,12 @@ const config: Config = {
           label: 'Документация',
         },
         {
+          type: 'doc',
+          docId: 'faq/index',
+          position: 'left',
+          label: 'FAQ',
+        },
+        {
           href: 'https://github.com/bia-technologies/rat',
           label: 'GitHub',
           position: 'right',
