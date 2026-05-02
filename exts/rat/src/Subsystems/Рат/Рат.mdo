@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ad9bfad5-cea3-407c-8db3-3da7e3213d1d">
+<mdclass:Subsystem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ad9bfad5-cea3-407c-8db3-3da7e3213d1d">
   <name>Рат</name>
   <includeHelpInContents>true</includeHelpInContents>
   <includeInCommandInterface>true</includeInCommandInterface>
+  <picture xsi:type="core:PictureRef">
+    <picture>CommonPicture.РатПодсистема</picture>
+  </picture>
   <subsystems>ВзаимодействиеСКлиентомТестирования</subsystems>
   <subsystems>ОписаниеСервиса</subsystems>
   <subsystems>Публичный</subsystems>

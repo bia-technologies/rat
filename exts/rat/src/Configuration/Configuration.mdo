@@ -25,6 +25,7 @@
   <subsystems>Subsystem.Рат</subsystems>
   <subsystems>Subsystem.РатАдаптацияФункциональности</subsystems>
   <subsystems>Subsystem.РатРасширениеФункциональности</subsystems>
+  <commonPictures>CommonPicture.РатПодсистема</commonPictures>
   <commonTemplates>CommonTemplate.РатИнтерфейс</commonTemplates>
   <commonTemplates>CommonTemplate.РатМетаданные</commonTemplates>
   <commonModules>CommonModule.РатJSON</commonModules>
