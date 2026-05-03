@@ -1,0 +1,61 @@
+#language: ru
+
+#©######################################################################/©#
+#
+#  This file is a part of RAT.
+#
+#  Copyright © 2021-2026
+#  BIA-Technologies Limited Liability Company and contributors
+#
+#  SPDX-License-Identifier: LGPL-3.0-or-later
+#
+#  RAT is free software: you can redistribute it and/or modify
+#  it under the terms of the GNU Lesser General Public License as published by
+#  the Free Software Foundation; either version 3 of the License, or
+#  (at your option) any later version.
+#
+#  RAT is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU Lesser General Public License for more details.
+#
+#  You should have received a copy of the GNU Lesser General Public License
+#  along with RAT. If not, see <https://www.gnu.org/licenses/>.
+#
+#©######################################################################/©#
+
+@tree
+
+Функционал: Ищейка - Документы
+
+Сценарий: Сравнение версий измененного документа появляется после остановки слежения
+
+	Дано Я создаю запись "Документ.Ф_Чек" внешней системы "ЭтаБаза"
+		| ВидОперации   | Приход |
+		| КассоваяСмена | 1      |
+	И Я сохраняю в переменную "ИдентификаторЧека" реквизит результата запроса "id"
+	И Я сохраняю в переменную "Чек" реквизит результата запроса "presentation"
+	И Я подключаю клиент тестирования "Этот клиент" из таблицы клиентов тестирования
+	И я закрываю все окна клиентского приложения
+	И Я открываю основную форму обработки "РатИщейка"
+	Тогда открылось окно 'Ищейка'
+
+	Когда я нажимаю на кнопку с именем "ФормаНачатьСлежение"
+	И я выполняю алгоритм в клиенте тестирования на сервере
+		"""
+		Ссылка = Документы.Ф_Чек.ПолучитьСсылку(Новый УникальныйИдентификатор("$ИдентификаторЧека$"));
+		Объект = Ссылка.ПолучитьОбъект();
+		Объект.КассоваяСмена = 200003;
+		Объект.Записать();
+		"""
+
+	Когда я нажимаю на кнопку с именем "ФормаЗавершитьСлежение"
+	Тогда открылось окно 'Ищейка'
+	И я жду, что в таблице "Объекты" количество строк будет "больше" 0 в течение 20 секунд
+	И таблица "Объекты" содержит строки по шаблону:
+		| 'Представление' |
+		| '$Чек$'         |
+	И в таблице "Объекты" я перехожу к строке:
+		| 'Представление' |
+		| '$Чек$'         |
+	И сравнение версий Ищейки в клиенте тестирования содержит текст "200003"
