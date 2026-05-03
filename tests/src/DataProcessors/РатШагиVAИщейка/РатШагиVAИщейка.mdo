@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e87fc0bc-fd75-413c-81c3-b3cf140588e6">
+  <producedTypes>
+    <objectType typeId="784f9ea7-09db-4c7d-87d5-f39704a7db0e" valueTypeId="b924874a-b69a-44bc-bec8-8cf3c3f9c8b0"/>
+    <managerType typeId="18a25d8e-0c4d-4e36-830a-9c63f66e2a6c" valueTypeId="c143d123-0000-4fe2-9e7d-729c6a44668f"/>
+  </producedTypes>
+  <name>РатШагиVAИщейка</name>
+  <synonym>
+    <key>ru</key>
+    <value>Шаги VA Ищейка</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.РатШагиVAИщейка.Form.Форма</defaultForm>
+  <forms uuid="4cd37ec3-b764-462a-9083-22db2e50625a">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

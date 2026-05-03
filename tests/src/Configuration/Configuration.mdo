@@ -202,6 +202,7 @@
   <commonModules>CommonModule.ЮТЧитательСлужебныйВызовСервера</commonModules>
   <commonModules>CommonModule.ЮТЧитательСлужебныйКлиент</commonModules>
   <dataProcessors>DataProcessor.Мок_Ванесса</dataProcessors>
+  <dataProcessors>DataProcessor.РатШагиVAИщейка</dataProcessors>
   <dataProcessors>DataProcessor.ЮТHTTPServiceRequest</dataProcessors>
   <dataProcessors>DataProcessor.ЮТHTTPОтвет</dataProcessors>
   <dataProcessors>DataProcessor.ЮТHTTPСервисЗапрос</dataProcessors>
