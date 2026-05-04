@@ -6,6 +6,8 @@ description: Work on a repository issue from branch creation through commit and 
 # Issue Workflow
 
 Use this skill when work is tied to a GitHub issue or another tracked issue id.
+Branch creation is automatic only for issue-tracked work.
+For non-issue tasks, stay on the current branch unless the user explicitly asks to create a branch.
 
 ## Required Inputs
 

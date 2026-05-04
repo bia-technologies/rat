@@ -13,7 +13,9 @@ Each task must pass through the following stages, in order:
 - If any agent proposes changes outside the current task scope: STOP and correct scope.
 
 ## Branching & Commits
-- Every task works in its own branch: `feat/<issue-i>-<short-description>`.
+- Create branches automatically only for issue-tracked work.
+- Issue tasks use their own branch: `feat/<issue-i>-<short-description>`.
+- Non-issue tasks stay on the current branch unless the user explicitly asks to create a branch.
 - Commit at the end of the task using Conventional Commits (e.g., `feat: ...`, `fix: ...`, `chore: ...`).
 
 ## Roles
