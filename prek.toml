@@ -1,13 +1,9 @@
 [[repos]]
-repo = "local"
+repo = "https://github.com/alkoleft/prec-bsl"
+rev = "v0.1.1"
 
 [[repos.hooks]]
 id = "prec-bsl"
-name = "prec-bsl"
-entry = "/home/alko/develop/open-source/prec-bsl/target/release/prec-bsl prek-hook"
-language = "system"
-always_run = true
-pass_filenames = false
 args = [
   "--config",
   "v8config.json",
