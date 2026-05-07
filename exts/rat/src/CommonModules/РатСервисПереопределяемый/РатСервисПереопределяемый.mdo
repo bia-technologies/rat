@@ -6,4 +6,5 @@
     <value>Сервис переопределяемый</value>
   </synonym>
   <server>true</server>
+  <clientOrdinaryApplication>true</clientOrdinaryApplication>
 </mdclass:CommonModule>

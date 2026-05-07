@@ -7,4 +7,5 @@
   </synonym>
   <comment>Модуль создания описания API в формате OpenAPI v3.0.0</comment>
   <server>true</server>
+  <clientOrdinaryApplication>true</clientOrdinaryApplication>
 </mdclass:CommonModule>

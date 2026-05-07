@@ -6,6 +6,7 @@
     <value>Повторного использования</value>
   </synonym>
   <server>true</server>
+  <clientOrdinaryApplication>true</clientOrdinaryApplication>
   <serverCall>true</serverCall>
   <returnValuesReuse>DuringSession</returnValuesReuse>
 </mdclass:CommonModule>

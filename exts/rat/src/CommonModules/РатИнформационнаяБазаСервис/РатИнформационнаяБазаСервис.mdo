@@ -6,4 +6,5 @@
     <value>Информационная база сервис</value>
   </synonym>
   <server>true</server>
+  <clientOrdinaryApplication>true</clientOrdinaryApplication>
 </mdclass:CommonModule>

@@ -6,4 +6,5 @@
     <value>Выполнение произвольных запросов</value>
   </synonym>
   <server>true</server>
+  <clientOrdinaryApplication>true</clientOrdinaryApplication>
 </mdclass:CommonModule>

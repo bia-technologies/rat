@@ -7,4 +7,5 @@
   </synonym>
   <comment>Модуль обработки запросов http-сервиса</comment>
   <server>true</server>
+  <clientOrdinaryApplication>true</clientOrdinaryApplication>
 </mdclass:CommonModule>
