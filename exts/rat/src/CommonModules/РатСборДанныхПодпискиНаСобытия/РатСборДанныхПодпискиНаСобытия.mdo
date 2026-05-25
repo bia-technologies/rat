@@ -5,6 +5,7 @@
     <key>ru</key>
     <value>Сбор данных: Подписки на события</value>
   </synonym>
+  <clientManagedApplication>true</clientManagedApplication>
   <server>true</server>
   <clientOrdinaryApplication>true</clientOrdinaryApplication>
 </mdclass:CommonModule>
