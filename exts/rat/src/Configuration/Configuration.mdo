@@ -28,8 +28,8 @@
   <subsystems>Subsystem.РатПубличный</subsystems>
   <subsystems>Subsystem.РатРасширениеФункциональности</subsystems>
   <commonPictures>CommonPicture.РатКрыса</commonPictures>
-  <sessionParameters>SessionParameter.РатАдресВременногоКонтекста</sessionParameters>
   <commonPictures>CommonPicture.РатПодсистема</commonPictures>
+  <sessionParameters>SessionParameter.РатАдресВременногоКонтекста</sessionParameters>
   <commonTemplates>CommonTemplate.РатИнтерфейс</commonTemplates>
   <commonTemplates>CommonTemplate.РатМетаданные</commonTemplates>
   <commonModules>CommonModule.РатJSON</commonModules>
@@ -40,17 +40,17 @@
   <commonModules>CommonModule.РатАнализТабличногоДокументаВызовСервера</commonModules>
   <commonModules>CommonModule.РатВзаимодействиеСКлиентомТестирования</commonModules>
   <commonModules>CommonModule.РатВзаимодействиеСКлиентомТестированияВызовСервера</commonModules>
+  <commonModules>CommonModule.РатВзаимодействиеСКлиентомТестированияКлиент</commonModules>
   <commonModules>CommonModule.РатВзаимодействиеСКлиентомТестированияКлиентСервер</commonModules>
   <commonModules>CommonModule.РатВиртуальныеТаблицы</commonModules>
   <commonModules>CommonModule.РатВызовСервисаКлиент</commonModules>
-  <commonModules>CommonModule.РатВзаимодействиеСКлиентомТестированияКлиент</commonModules>
   <commonModules>CommonModule.РатВыполнениеПроизвольныхЗапросов</commonModules>
   <commonModules>CommonModule.РатДвижения</commonModules>
   <commonModules>CommonModule.РатИнформационнаяБаза</commonModules>
+  <commonModules>CommonModule.РатИнформационнаяБазаПереопределяемый</commonModules>
   <commonModules>CommonModule.РатИнформационнаяБазаСервис</commonModules>
   <commonModules>CommonModule.РатИсключения</commonModules>
   <commonModules>CommonModule.РатКоллекции</commonModules>
-  <commonModules>CommonModule.РатИнформационнаяБазаПереопределяемый</commonModules>
   <commonModules>CommonModule.РатКоннекторHTTP</commonModules>
   <commonModules>CommonModule.РатМетаданные</commonModules>
   <commonModules>CommonModule.РатОбмены</commonModules>
