@@ -1,5 +1,4 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/alkoleft/v8-runner-rust/refs/heads/master/docs/schemas/v8project.schema.json
-basePath: './'
 workPath: 'build'
 execution_timeout: 300000
 format: EDT

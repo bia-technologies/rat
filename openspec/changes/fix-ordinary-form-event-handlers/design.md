@@ -11,7 +11,7 @@ The current source has RAT object-write logic in `РатИнформационн
 - Make RAT event subscription handlers resolvable in every runtime context where the 1C platform can trigger the subscription.
 - Prevent RAT from blocking ordinary-form opening or normal document work when no RAT request is being processed.
 - Keep the existing object write extension point and REST/test automation behavior intact.
-- Add a regression path that fails if a RAT event subscription references an unavailable handler.
+- Add a regression path that exercises ordinary-form opening with RAT enabled.
 
 **Non-Goals:**
 
@@ -32,7 +32,7 @@ The current source has RAT object-write logic in `РатИнформационн
 
 3. Add a focused ordinary-form regression fixture or scenario.
 
-   Verification should reproduce the user-visible failure: RAT extension enabled, thick client/runtime matching the issue, ordinary form opened, no missing-handler error. If the existing fixture cannot run ordinary forms directly, implementation should add the smallest fixture metadata or scenario needed to cover this path. Alternative considered: only static-searching handler names in source. Static checks are useful but insufficient because the failure depends on platform runtime availability.
+   Verification should reproduce the user-visible failure: RAT extension enabled, thick client/runtime matching the issue, ordinary form opened, no missing-handler error. If the existing fixture cannot run ordinary forms directly, implementation should add the smallest fixture metadata or scenario needed to cover this path.
 
 ## Risks / Trade-offs
 
