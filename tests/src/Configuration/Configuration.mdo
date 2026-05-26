@@ -94,6 +94,7 @@
   <commonModules>CommonModule.ОМ_РатСервис</commonModules>
   <commonModules>CommonModule.ОМ_РатСериализация</commonModules>
   <commonModules>CommonModule.ОМ_РатСпецификация</commonModules>
+  <commonModules>CommonModule.ОМ_РатСравнениеВерсийСлужебный</commonModules>
   <commonModules>CommonModule.ОМ_РатСтроки</commonModules>
   <commonModules>CommonModule.ОМ_РатТабличныеЧасти</commonModules>
   <commonModules>CommonModule.ОМ_РатТипыДанных</commonModules>

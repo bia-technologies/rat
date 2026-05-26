@@ -79,6 +79,7 @@
   <commonModules>CommonModule.РатСервисПереопределяемый</commonModules>
   <commonModules>CommonModule.РатСериализация</commonModules>
   <commonModules>CommonModule.РатСпецификация</commonModules>
+  <commonModules>CommonModule.РатСравнениеВерсийСлужебный</commonModules>
   <commonModules>CommonModule.РатСтроки</commonModules>
   <commonModules>CommonModule.РатТабличныеЧасти</commonModules>
   <commonModules>CommonModule.РатТипыДанных</commonModules>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CommonModule xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="08452ddb-def6-4aad-9009-ea32e3773521">
+  <name>РатСравнениеВерсийСлужебный</name>
+  <synonym>
+    <key>ru</key>
+    <value>Сравнение версий</value>
+  </synonym>
+  <server>true</server>
+</mdclass:CommonModule>
