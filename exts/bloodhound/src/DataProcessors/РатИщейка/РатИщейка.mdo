@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c434dab7-c079-47cc-854d-ff78852c3057">
+  <producedTypes>
+    <objectType typeId="1533b9b8-c821-4882-a0f6-fedbb02bb648" valueTypeId="6306bd0b-aaf6-427b-be62-0ca5cfb58027"/>
+    <managerType typeId="b2951e36-9e23-4f65-a8b1-5b2b636531e8" valueTypeId="b25a41a0-cf15-41cf-811c-a18bea27dd88"/>
+  </producedTypes>
+  <name>РатИщейка</name>
+  <synonym>
+    <key>ru</key>
+    <value>Ищейка</value>
+  </synonym>
+  <defaultForm>DataProcessor.РатИщейка.Form.Форма</defaultForm>
+  <forms uuid="7c6f2c3e-b26e-4e6b-8064-d8d45295e45c">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="b5f1b10b-5883-445f-aa3f-6cbd184563cb">
+    <name>РатСравнениеСервий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рат сравнение сервий</value>
+    </synonym>
+    <templateType>TextDocument</templateType>
+  </templates>
+  <commands uuid="ac5f898e-a3a1-4c4e-9db5-ed79cc4435f8">
+    <name>Ищейка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ищейка</value>
+    </synonym>
+    <group>NavigationPanelImportant</group>
+    <representation>PictureAndText</representation>
+  </commands>
+</mdclass:DataProcessor>

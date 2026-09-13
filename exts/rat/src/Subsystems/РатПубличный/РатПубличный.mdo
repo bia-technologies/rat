@@ -11,5 +11,4 @@
     <picture>CommonPicture.РатКрыса</picture>
   </picture>
   <content>DataProcessor.РатГенераторСценариев</content>
-  <content>DataProcessor.РатИщейка</content>
 </mdclass:Subsystem>

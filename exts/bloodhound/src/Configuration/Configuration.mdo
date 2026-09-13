@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" xmlns:mdclassExtension="http://g5.1c.ru/v8/dt/metadata/mdclass/extension" uuid="c9db7d7e-16ff-4826-853d-5593c1f63a09">
+  <name>Ищейка</name>
+  <synonym>
+    <key>ru</key>
+    <value>Ищейка</value>
+  </synonym>
+  <objectBelonging>Adopted</objectBelonging>
+  <extension xsi:type="mdclassExtension:ConfigurationExtension">
+    <defaultRunMode>Checked</defaultRunMode>
+    <usePurposes>Checked</usePurposes>
+    <managedApplicationModule>Extended</managedApplicationModule>
+    <sessionModule>Extended</sessionModule>
+    <externalConnectionModule>Extended</externalConnectionModule>
+    <commandInterface>Extended</commandInterface>
+    <mainSectionCommandInterface>Extended</mainSectionCommandInterface>
+    <interfaceCompatibilityMode>Checked</interfaceCompatibilityMode>
+    <compatibilityMode>Checked</compatibilityMode>
+    <defaultStyle>Extended</defaultStyle>
+    <defaultRoles>Extended</defaultRoles>
+  </extension>
+  <containedObjects classId="9cd510cd-abfc-11d4-9434-004095e12fc7" objectId="9f8e28dd-742c-4ca7-ae2d-d4ccc2ffdf2c"/>
+  <containedObjects classId="9fcd25a0-4822-11d4-9414-008048da11f9" objectId="7d2a32f3-8d98-44be-8e7c-954919f339fb"/>
+  <containedObjects classId="e3687481-0a87-462c-a166-9f34594f9bba" objectId="e3cf7186-bdf0-4a92-8868-9652a7edec3a"/>
+  <containedObjects classId="9de14907-ec23-4a07-96f0-85521cb6b53b" objectId="de60201f-9d9d-4ae8-9edd-ec9fadb0b08f"/>
+  <containedObjects classId="51f2d5d8-ea4d-4064-8892-82951750031e" objectId="c4561709-5566-48e7-9976-9b8336d266ca"/>
+  <containedObjects classId="e68182ea-4237-4383-967f-90c1e3370bc7" objectId="f9a0488f-fc40-4ded-bd87-7f0b3af18a50"/>
+  <containedObjects classId="fb282519-d103-4dd3-bc12-cb271d631dfc" objectId="f85eeb33-0d0d-4d3a-8b4e-bb470a348149"/>
+  <keepMappingToExtendedConfigurationObjectsByIDs>true</keepMappingToExtendedConfigurationObjectsByIDs>
+  <namePrefix>Ищ_</namePrefix>
+  <configurationExtensionCompatibilityMode>8.3.20</configurationExtensionCompatibilityMode>
+  <configurationExtensionPurpose>Customization</configurationExtensionPurpose>
+  <defaultRunMode>ManagedApplication</defaultRunMode>
+  <usePurposes>PersonalComputer</usePurposes>
+  <scriptVariant>Russian</scriptVariant>
+  <compatibilityMode>8.3.20</compatibilityMode>
+  <subsystems>Subsystem.Ищ_Ищейка</subsystems>
+  <commonPictures>CommonPicture.Ищ_Иконка</commonPictures>
+  <sessionParameters>SessionParameter.Ищ_АдресВременногоКонтекста</sessionParameters>
+  <commonModules>CommonModule.РатСборДанных</commonModules>
+  <commonModules>CommonModule.РатСборДанныхПодпискиНаСобытия</commonModules>
+  <commonModules>CommonModule.РатСборДанныхСлужебный</commonModules>
+  <commonModules>CommonModule.РатСравнениеВерсийСлужебный</commonModules>
+  <eventSubscriptions>EventSubscription.РатПередЗаписьюДокумента</eventSubscriptions>
+  <eventSubscriptions>EventSubscription.РатПередЗаписьюКонстанты</eventSubscriptions>
+  <eventSubscriptions>EventSubscription.РатПередЗаписьюОбъекта</eventSubscriptions>
+  <eventSubscriptions>EventSubscription.РатПередЗаписьюРегистра</eventSubscriptions>
+  <eventSubscriptions>EventSubscription.РатПередЗаписьюРегистраРасчета</eventSubscriptions>
+  <eventSubscriptions>EventSubscription.РатПриЗаписиДокумента</eventSubscriptions>
+  <eventSubscriptions>EventSubscription.РатПриЗаписиКонстанты</eventSubscriptions>
+  <eventSubscriptions>EventSubscription.РатПриЗаписиОбъекта</eventSubscriptions>
+  <eventSubscriptions>EventSubscription.РатПриЗаписиРегистра</eventSubscriptions>
+  <eventSubscriptions>EventSubscription.РатПриЗаписиРегистраРасчета</eventSubscriptions>
+  <dataProcessors>DataProcessor.РатИщейка</dataProcessors>
+</mdclass:Configuration>

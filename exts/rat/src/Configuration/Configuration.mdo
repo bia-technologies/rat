@@ -28,8 +28,6 @@
   <subsystems>Subsystem.РатПубличный</subsystems>
   <subsystems>Subsystem.РатРасширениеФункциональности</subsystems>
   <commonPictures>CommonPicture.РатКрыса</commonPictures>
-  <commonPictures>CommonPicture.РатПодсистема</commonPictures>
-  <sessionParameters>SessionParameter.РатАдресВременногоКонтекста</sessionParameters>
   <commonTemplates>CommonTemplate.РатИнтерфейс</commonTemplates>
   <commonTemplates>CommonTemplate.РатМетаданные</commonTemplates>
   <commonModules>CommonModule.РатJSON</commonModules>
@@ -72,14 +70,10 @@
   <commonModules>CommonModule.РатРасширениеФункциональностиКлиентСервер</commonModules>
   <commonModules>CommonModule.РатРасширениеФункциональностиПовтИсп</commonModules>
   <commonModules>CommonModule.РатРегламентныеЗадания</commonModules>
-  <commonModules>CommonModule.РатСборДанных</commonModules>
-  <commonModules>CommonModule.РатСборДанныхПодпискиНаСобытия</commonModules>
-  <commonModules>CommonModule.РатСборДанныхСлужебный</commonModules>
   <commonModules>CommonModule.РатСервис</commonModules>
   <commonModules>CommonModule.РатСервисПереопределяемый</commonModules>
   <commonModules>CommonModule.РатСериализация</commonModules>
   <commonModules>CommonModule.РатСпецификация</commonModules>
-  <commonModules>CommonModule.РатСравнениеВерсийСлужебный</commonModules>
   <commonModules>CommonModule.РатСтроки</commonModules>
   <commonModules>CommonModule.РатТабличныеЧасти</commonModules>
   <commonModules>CommonModule.РатТипыДанных</commonModules>
@@ -92,18 +86,7 @@
   <commonModules>CommonModule.РатЭмуляцияДействийПользователя</commonModules>
   <commonModules>CommonModule.РатЭмуляцияДействийПользователяВызовКлиента</commonModules>
   <httpServices>HTTPService.RAT</httpServices>
-  <eventSubscriptions>EventSubscription.РатПередЗаписьюДокумента</eventSubscriptions>
-  <eventSubscriptions>EventSubscription.РатПередЗаписьюКонстанты</eventSubscriptions>
-  <eventSubscriptions>EventSubscription.РатПередЗаписьюОбъекта</eventSubscriptions>
-  <eventSubscriptions>EventSubscription.РатПередЗаписьюРегистра</eventSubscriptions>
-  <eventSubscriptions>EventSubscription.РатПередЗаписьюРегистраРасчета</eventSubscriptions>
-  <eventSubscriptions>EventSubscription.РатПриЗаписиДокумента</eventSubscriptions>
-  <eventSubscriptions>EventSubscription.РатПриЗаписиКонстанты</eventSubscriptions>
-  <eventSubscriptions>EventSubscription.РатПриЗаписиОбъекта</eventSubscriptions>
-  <eventSubscriptions>EventSubscription.РатПриЗаписиРегистра</eventSubscriptions>
-  <eventSubscriptions>EventSubscription.РатПриЗаписиРегистраРасчета</eventSubscriptions>
   <commonCommands>CommonCommand.РатКомандныйИнтерфейсЗапросОтвет</commonCommands>
   <dataProcessors>DataProcessor.РатГенераторСценариев</dataProcessors>
-  <dataProcessors>DataProcessor.РатИщейка</dataProcessors>
   <dataProcessors>DataProcessor.РатШагиVA</dataProcessors>
 </mdclass:Configuration>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:SessionParameter xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="cd6f5601-e5fd-4da1-b3f5-72fda396a3f3">
+  <name>Ищ_АдресВременногоКонтекста</name>
+  <synonym>
+    <key>ru</key>
+    <value>Адрес временного контекста</value>
+  </synonym>
+  <type>
+    <types>String</types>
+    <stringQualifiers/>
+  </type>
+</mdclass:SessionParameter>

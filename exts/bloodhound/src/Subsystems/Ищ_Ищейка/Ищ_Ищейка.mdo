@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f3d3a3e5-0852-4cae-96e8-1b7b6cb9d758">
+  <name>Ищ_Ищейка</name>
+  <synonym>
+    <key>ru</key>
+    <value>Ищейка</value>
+  </synonym>
+  <includeHelpInContents>true</includeHelpInContents>
+  <includeInCommandInterface>true</includeInCommandInterface>
+  <picture xsi:type="core:PictureRef">
+    <picture>CommonPicture.Ищ_Иконка</picture>
+  </picture>
+  <content>DataProcessor.РатИщейка</content>
+  <content>EventSubscription.РатПередЗаписьюДокумента</content>
+  <content>EventSubscription.РатПередЗаписьюКонстанты</content>
+  <content>EventSubscription.РатПередЗаписьюОбъекта</content>
+  <content>EventSubscription.РатПередЗаписьюРегистра</content>
+  <content>EventSubscription.РатПередЗаписьюРегистраРасчета</content>
+  <content>EventSubscription.РатПриЗаписиДокумента</content>
+  <content>EventSubscription.РатПриЗаписиКонстанты</content>
+  <content>EventSubscription.РатПриЗаписиОбъекта</content>
+  <content>EventSubscription.РатПриЗаписиРегистра</content>
+  <content>EventSubscription.РатПриЗаписиРегистраРасчета</content>
+  <content>SessionParameter.Ищ_АдресВременногоКонтекста</content>
+  <content>CommonModule.РатСборДанных</content>
+  <content>CommonModule.РатСборДанныхПодпискиНаСобытия</content>
+  <content>CommonModule.РатСборДанныхСлужебный</content>
+  <content>CommonModule.РатСравнениеВерсийСлужебный</content>
+</mdclass:Subsystem>

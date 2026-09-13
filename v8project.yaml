@@ -14,13 +14,17 @@ source-set:
     type: EXTENSION
     path: 'exts/rat'
 
+  - name: 'Ищейка'
+    type: EXTENSION
+    path: 'exts/bloodhound'
+
   - name: 'tests'
     type: EXTENSION
     path: 'tests'
 
 tools:
   platform:
-    version: '8.3.27'
+    version: '8.3.20'
   client_mcp:
     port: 9874
 build:
@@ -29,8 +33,8 @@ tests:
   execution_timeout_seconds: 900
   va:
     params_path: 'VAParams.json'
-    profile: generator
+    profile: main
     fail_fast: true
     profiles:
-      generator:
+      main:
         feature_path: 'features_scenario'

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CommonModule xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="cc15cfdf-60b5-4e4a-9c66-79ce7e9dfb6c">
+  <name>РатСборДанных</name>
+  <synonym>
+    <key>ru</key>
+    <value>Сбор данных</value>
+  </synonym>
+  <clientManagedApplication>true</clientManagedApplication>
+  <server>true</server>
+  <clientOrdinaryApplication>true</clientOrdinaryApplication>
+</mdclass:CommonModule>
