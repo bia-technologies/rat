@@ -79,6 +79,7 @@
   <commonModules>CommonModule.ОМ_РатОбмены</commonModules>
   <commonModules>CommonModule.ОМ_РатОбщий</commonModules>
   <commonModules>CommonModule.ОМ_РатОбщийКлиентСервер</commonModules>
+  <commonModules>CommonModule.ОМ_РатПовтИсп</commonModules>
   <commonModules>CommonModule.ОМ_РатПользователиИнформационнойБазы</commonModules>
   <commonModules>CommonModule.ОМ_РатПреобразования</commonModules>
   <commonModules>CommonModule.ОМ_РатПреобразованияВспомогательные</commonModules>
